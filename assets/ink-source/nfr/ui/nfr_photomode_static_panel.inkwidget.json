@@ -1,0 +1,2462 @@
+{
+  "Header": {
+    "WolvenKitVersion": "1.0.0+6f6be2fb74f3c4786fc49c205af4104e32ae27c2",
+    "WKitJsonVersion": "0.0.9",
+    "GameVersion": 2310,
+    "ExportedDateTime": "2026-08-16T19:19:35.1104551Z",
+    "DataType": "CR2W",
+    "ArchiveFileName": "nfr\\ui\\nfr_photomode_static_panel.inkwidget"
+  },
+  "Data": {
+    "Version": 195,
+    "BuildVersion": 0,
+    "RootChunk": {
+      "$type": "inkWidgetLibraryResource",
+      "animationLibraryResRef": null,
+      "cookingPlatform": "PLATFORM_PC",
+      "externalDependenciesForInternalItems": [
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\main_colors.inkstyle"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\fullscreen\\photo_mode\\photomode_atlas.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\shapes\\atlas_shapes_sync.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\fonts\\arame\\arame.inkfontfamily"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\input\\icons_keyboard.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\buttons\\base_buttons.inkwidget"
+          },
+          "Flags": "Default"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\main_style.inkstyle"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\input\\icons_orbis.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\input\\icons_prospero.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\input\\icons_durango.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\fullscreen\\inventory\\inventory4_atlas.inkatlas"
+          },
+          "Flags": "Soft"
+        },
+        {
+          "DepotPath": {
+            "$type": "ResourcePath",
+            "$storage": "string",
+            "$value": "base\\gameplay\\gui\\common\\masks.inkatlas"
+          },
+          "Flags": "Soft"
+        }
+      ],
+      "externalLibraries": [],
+      "libraryItems": [
+        {
+          "$type": "inkWidgetLibraryItem",
+          "name": {
+            "$type": "CName",
+            "$storage": "string",
+            "$value": "Root"
+          },
+          "package": {
+            "Flags": 0,
+            "Type": "WolvenKit.RED4.Archive.Buffer.CR2WWrapper, WolvenKit.RED4, Version=8.18.0.0, Culture=neutral, PublicKeyToken=null",
+            "Data": {
+              "File": {
+                "Version": 195,
+                "BuildVersion": 0,
+                "RootChunk": {
+                  "$type": "inkWidgetLibraryItemInstance",
+                  "gameController": null,
+                  "rootResolution": "UltraHD_3840_2160",
+                  "rootWidget": {
+                    "HandleId": "2617",
+                    "Data": {
+                      "$type": "inkScrollAreaWidget",
+                      "affectsLayoutWhenHidden": 0,
+                      "backendData": null,
+                      "canSupportFocus": 0,
+                      "childMargin": {
+                        "$type": "inkMargin",
+                        "bottom": 0,
+                        "left": 0,
+                        "right": 16,
+                        "top": 0
+                      },
+                      "childOrder": "Forward",
+                      "children": {
+                        "HandleId": "2618",
+                        "Data": {
+                          "$type": "inkMultiChildren",
+                          "children": [
+                            {
+                              "HandleId": "2700",
+                              "Data": {
+                                "$type": "inkCanvasWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "childMargin": { "$type": "inkMargin", "bottom": 0, "left": 0, "right": 0, "top": 0 },
+                                "childOrder": "Backward",
+                                "children": { "HandleId": "2701", "Data": { "$type": "inkMultiChildren", "children": [] } },
+                                "effects": [],
+                                "fitToContent": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "TopLeft",
+                                  "anchorPoint": { "$type": "Vector2", "X": 0, "Y": 0 },
+                                  "HAlign": "Fill",
+                                  "margin": { "$type": "inkMargin", "bottom": 0, "left": 0, "right": 0, "top": 0 },
+                                  "padding": { "$type": "inkMargin", "bottom": 0, "left": 0, "right": 0, "top": 0 },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Fill"
+                                },
+                                "logicController": null,
+                                "name": { "$type": "CName", "$storage": "string", "$value": "content" },
+                                "opacity": 1,
+                                "parentWidget": { "HandleRefId": "2617" },
+                                "propertyManager": null,
+                                "proxyWidget": null,
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": { "$type": "Vector2", "X": 1, "Y": 1 },
+                                  "shear": { "$type": "Vector2", "X": 0, "Y": 0 },
+                                  "translation": { "$type": "Vector2", "X": 0, "Y": 0 }
+                                },
+                                "renderTransformPivot": { "$type": "Vector2", "X": 0.5, "Y": 0.5 },
+                                "secondaryControllers": [],
+                                "size": { "$type": "Vector2", "X": 1500, "Y": 648 },
+                                "state": { "$type": "CName", "$storage": "string", "$value": "Default" },
+                                "style": null,
+                                "tintColor": { "$type": "HDRColor", "Alpha": 1, "Blue": 1, "Green": 1, "Red": 1 },
+                                "userData": [],
+                                "visible": 1
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "constrainContentPosition": 0,
+                      "effects": [],
+                      "fitToContent": 0,
+                      "fitToContentDirection": "None",
+                      "horizontalScrolling": 0,
+                      "isInteractive": 0,
+                      "layout": {
+                        "$type": "inkWidgetLayout",
+                        "anchor": "TopLeft",
+                        "anchorPoint": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "HAlign": "Fill",
+                        "margin": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "padding": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "sizeCoefficient": 1,
+                        "sizeRule": "Fixed",
+                        "VAlign": "Fill"
+                      },
+                      "logicController": null,
+                      "name": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "inkHorizontalPanelWidget2"
+                      },
+                      "opacity": 1,
+                      "parentWidget": null,
+                      "propertyManager": null,
+                      "renderTransform": {
+                        "$type": "inkUITransform",
+                        "rotation": 0,
+                        "scale": {
+                          "$type": "Vector2",
+                          "X": 1,
+                          "Y": 1
+                        },
+                        "shear": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "translation": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        }
+                      },
+                      "renderTransformPivot": {
+                        "$type": "Vector2",
+                        "X": 0.5,
+                        "Y": 0.5
+                      },
+                      "secondaryControllers": [],
+                      "size": {
+                        "$type": "Vector2",
+                        "X": 1500,
+                        "Y": 648
+                      },
+                      "state": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "Default"
+                      },
+                      "style": null,
+                      "tintColor": {
+                        "$type": "HDRColor",
+                        "Alpha": 1,
+                        "Blue": 1,
+                        "Green": 1,
+                        "Red": 1
+                      },
+                      "useInternalMask": 1,
+                      "userData": [],
+                      "verticalScrolling": 1,
+                      "visible": 1
+                    }
+                  }
+                },
+                "EmbeddedFiles": []
+              }
+            }
+          },
+          "packageData": {
+            "BufferId": "6",
+            "Flags": 4063232,
+            "Type": "WolvenKit.RED4.Archive.Buffer.RedPackage, WolvenKit.RED4, Version=8.18.0.0, Culture=neutral, PublicKeyToken=null",
+            "Data": {
+              "Version": 4,
+              "Sections": 6,
+              "CruidIndex": 0,
+              "CruidDict": {},
+              "Chunks": [
+                {
+                  "$type": "inkWidgetLibraryItemInstance",
+                  "gameController": null,
+                  "rootResolution": "UltraHD_3840_2160",
+                  "rootWidget": {
+                    "HandleId": "2619",
+                    "Data": {
+                      "$type": "inkScrollAreaWidget",
+                      "affectsLayoutWhenHidden": 0,
+                      "backendData": {
+                        "HandleId": "2620",
+                        "Data": {
+                          "$type": "inkWidgetBackendData",
+                          "boundLibraryItemName": {
+                            "$type": "CName",
+                            "$storage": "string",
+                            "$value": "None"
+                          },
+                          "isHiddenInEditor": 0,
+                          "isLocked": 0,
+                          "owner": {
+                            "HandleRefId": "2619"
+                          }
+                        }
+                      },
+                      "canSupportFocus": 0,
+                      "childMargin": {
+                        "$type": "inkMargin",
+                        "bottom": 0,
+                        "left": 0,
+                        "right": 16,
+                        "top": 0
+                      },
+                      "childOrder": "Forward",
+                      "children": {
+                        "HandleId": "2621",
+                        "Data": {
+                          "$type": "inkMultiChildren",
+                          "children": [
+                            {
+                              "HandleId": "2702",
+                              "Data": {
+                                "$type": "inkCanvasWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "childMargin": { "$type": "inkMargin", "bottom": 0, "left": 0, "right": 0, "top": 0 },
+                                "childOrder": "Backward",
+                                "children": { "HandleId": "2703", "Data": { "$type": "inkMultiChildren", "children": [] } },
+                                "effects": [],
+                                "fitToContent": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "TopLeft",
+                                  "anchorPoint": { "$type": "Vector2", "X": 0, "Y": 0 },
+                                  "HAlign": "Fill",
+                                  "margin": { "$type": "inkMargin", "bottom": 0, "left": 0, "right": 0, "top": 0 },
+                                  "padding": { "$type": "inkMargin", "bottom": 0, "left": 0, "right": 0, "top": 0 },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Fill"
+                                },
+                                "logicController": null,
+                                "name": { "$type": "CName", "$storage": "string", "$value": "content" },
+                                "opacity": 1,
+                                "parentWidget": { "HandleRefId": "2619" },
+                                "propertyManager": null,
+                                "proxyWidget": null,
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": { "$type": "Vector2", "X": 1, "Y": 1 },
+                                  "shear": { "$type": "Vector2", "X": 0, "Y": 0 },
+                                  "translation": { "$type": "Vector2", "X": 0, "Y": 0 }
+                                },
+                                "renderTransformPivot": { "$type": "Vector2", "X": 0.5, "Y": 0.5 },
+                                "secondaryControllers": [],
+                                "size": { "$type": "Vector2", "X": 1500, "Y": 648 },
+                                "state": { "$type": "CName", "$storage": "string", "$value": "Default" },
+                                "style": null,
+                                "tintColor": { "$type": "HDRColor", "Alpha": 1, "Blue": 1, "Green": 1, "Red": 1 },
+                                "userData": [],
+                                "visible": 1
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "constrainContentPosition": 0,
+                      "effects": [],
+                      "fitToContent": 0,
+                      "fitToContentDirection": "None",
+                      "horizontalScrolling": 0,
+                      "isInteractive": 0,
+                      "layout": {
+                        "$type": "inkWidgetLayout",
+                        "anchor": "TopLeft",
+                        "anchorPoint": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "HAlign": "Fill",
+                        "margin": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "padding": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "sizeCoefficient": 1,
+                        "sizeRule": "Fixed",
+                        "VAlign": "Fill"
+                      },
+                      "logicController": null,
+                      "name": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "inkHorizontalPanelWidget2"
+                      },
+                      "opacity": 1,
+                      "parentWidget": null,
+                      "propertyManager": null,
+                      "renderTransform": {
+                        "$type": "inkUITransform",
+                        "rotation": 0,
+                        "scale": {
+                          "$type": "Vector2",
+                          "X": 1,
+                          "Y": 1
+                        },
+                        "shear": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "translation": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        }
+                      },
+                      "renderTransformPivot": {
+                        "$type": "Vector2",
+                        "X": 0.5,
+                        "Y": 0.5
+                      },
+                      "secondaryControllers": [],
+                      "size": {
+                        "$type": "Vector2",
+                        "X": 1500,
+                        "Y": 648
+                      },
+                      "state": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "Default"
+                      },
+                      "style": null,
+                      "tintColor": {
+                        "$type": "HDRColor",
+                        "Alpha": 1,
+                        "Blue": 1,
+                        "Green": 1,
+                        "Red": 1
+                      },
+                      "useInternalMask": 1,
+                      "userData": [],
+                      "verticalScrolling": 1,
+                      "visible": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "$type": "inkWidgetLibraryItem",
+          "name": {
+            "$type": "CName",
+            "$storage": "string",
+            "$value": "Card"
+          },
+          "package": {
+            "Flags": 0,
+            "Type": "WolvenKit.RED4.Archive.Buffer.CR2WWrapper, WolvenKit.RED4, Version=8.18.0.0, Culture=neutral, PublicKeyToken=null",
+            "Data": {
+              "File": {
+                "Version": 195,
+                "BuildVersion": 0,
+                "RootChunk": {
+                  "$type": "inkWidgetLibraryItemInstance",
+                  "gameController": null,
+                  "rootResolution": "UltraHD_3840_2160",
+                  "rootWidget": {
+                    "HandleId": "2585",
+                    "Data": {
+                      "$type": "inkCanvasWidget",
+                      "affectsLayoutWhenHidden": 0,
+                      "backendData": null,
+                      "canSupportFocus": 0,
+                      "childMargin": {
+                        "$type": "inkMargin",
+                        "bottom": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0
+                      },
+                      "childOrder": "Backward",
+                      "children": {
+                        "HandleId": "2586",
+                        "Data": {
+                          "$type": "inkMultiChildren",
+                          "children": [
+                            {
+                              "HandleId": "2587",
+                              "Data": {
+                                "$type": "inkImageWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "contentHAlign": "Fill",
+                                "contentVAlign": "Fill",
+                                "effects": [],
+                                "externalDynamicTexture": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "fitToContent": 1,
+                                "horizontalTileCrop": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0.5,
+                                    "Y": 0.5
+                                  },
+                                  "HAlign": "Center",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Center"
+                                },
+                                "logicController": null,
+                                "mirrorType": "NoMirror",
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "frameImg"
+                                },
+                                "nineSliceScale": {
+                                  "$type": "inkMargin",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "right": 0,
+                                  "top": 0
+                                },
+                                "opacity": 1,
+                                "parentWidget": {
+                                  "HandleRefId": "2585"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2588",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 146,
+                                  "Y": 146
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "textureAtlas": {
+                                  "DepotPath": {
+                                    "$type": "ResourcePath",
+                                    "$storage": "string",
+                                    "$value": "base\\gameplay\\gui\\fullscreen\\inventory\\inventory4_atlas.inkatlas"
+                                  },
+                                  "Flags": "Soft"
+                                },
+                                "texturePart": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "item_grid_frame3"
+                                },
+                                "tileHAlign": "Left",
+                                "tileType": "NoTile",
+                                "tileVAlign": "Top",
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "useExternalDynamicTexture": 0,
+                                "useNineSliceScale": 0,
+                                "userData": [],
+                                "verticalTileCrop": 0,
+                                "visible": 1
+                              }
+                            },
+                            {
+                              "HandleId": "2589",
+                              "Data": {
+                                "$type": "inkImageWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "contentHAlign": "Fill",
+                                "contentVAlign": "Fill",
+                                "effects": [],
+                                "externalDynamicTexture": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "fitToContent": 1,
+                                "horizontalTileCrop": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0.5,
+                                    "Y": 0.5
+                                  },
+                                  "HAlign": "Center",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 6,
+                                    "left": 0,
+                                    "right": 6,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Center"
+                                },
+                                "logicController": null,
+                                "mirrorType": "NoMirror",
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "dynamicImg"
+                                },
+                                "nineSliceScale": {
+                                  "$type": "inkMargin",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "right": 0,
+                                  "top": 0
+                                },
+                                "opacity": 1,
+                                "parentWidget": {
+                                  "HandleRefId": "2585"
+                                },
+                                "propertyManager": null,
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 110,
+                                  "Y": 110
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "textureAtlas": {
+                                  "DepotPath": {
+                                    "$type": "ResourcePath",
+                                    "$storage": "uint64",
+                                    "$value": "0"
+                                  },
+                                  "Flags": "Soft"
+                                },
+                                "texturePart": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "tileHAlign": "Left",
+                                "tileType": "NoTile",
+                                "tileVAlign": "Top",
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 1,
+                                  "Green": 1,
+                                  "Red": 1
+                                },
+                                "useExternalDynamicTexture": 0,
+                                "useNineSliceScale": 0,
+                                "userData": [],
+                                "verticalTileCrop": 0,
+                                "visible": 0
+                              }
+                            },
+                            {
+                              "HandleId": "2590",
+                              "Data": {
+                                "$type": "inkImageWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "contentHAlign": "Fill",
+                                "contentVAlign": "Fill",
+                                "effects": [],
+                                "externalDynamicTexture": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "fitToContent": 1,
+                                "horizontalTileCrop": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Centered",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0.5,
+                                    "Y": 0.5
+                                  },
+                                  "HAlign": "Center",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Center"
+                                },
+                                "logicController": null,
+                                "mirrorType": "NoMirror",
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "plusImg"
+                                },
+                                "nineSliceScale": {
+                                  "$type": "inkMargin",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "right": 0,
+                                  "top": 0
+                                },
+                                "opacity": 1,
+                                "parentWidget": {
+                                  "HandleRefId": "2585"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2591",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 32,
+                                  "Y": 32
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "textureAtlas": {
+                                  "DepotPath": {
+                                    "$type": "ResourcePath",
+                                    "$storage": "string",
+                                    "$value": "base\\gameplay\\gui\\fullscreen\\inventory\\inventory4_atlas.inkatlas"
+                                  },
+                                  "Flags": "Soft"
+                                },
+                                "texturePart": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "icon_add"
+                                },
+                                "tileHAlign": "Left",
+                                "tileType": "NoTile",
+                                "tileVAlign": "Top",
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "useExternalDynamicTexture": 0,
+                                "useNineSliceScale": 0,
+                                "userData": [],
+                                "verticalTileCrop": 0,
+                                "visible": 1
+                              }
+                            },
+                            {
+                              "HandleId": "2592",
+                              "Data": {
+                                "$type": "inkRectangleWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "effects": [],
+                                "fitToContent": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "HAlign": "Fill",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 6,
+                                    "left": 0,
+                                    "right": 6,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Fill"
+                                },
+                                "logicController": null,
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "bgRect"
+                                },
+                                "opacity": 0.400000006,
+                                "parentWidget": {
+                                  "HandleRefId": "2585"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2593",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 64,
+                                  "Y": 64
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "userData": [],
+                                "visible": 1
+                              }
+                            },
+                            {
+                              "HandleId": "2594",
+                              "Data": {
+                                "$type": "inkRectangleWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": null,
+                                "canSupportFocus": 0,
+                                "effects": [],
+                                "fitToContent": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "HAlign": "Fill",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 6,
+                                    "left": 0,
+                                    "right": 6,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Fill"
+                                },
+                                "logicController": null,
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "hoverRect"
+                                },
+                                "opacity": 0.200000003,
+                                "parentWidget": {
+                                  "HandleRefId": "2585"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2595",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 64,
+                                  "Y": 64
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "userData": [],
+                                "visible": 0
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "effects": [],
+                      "fitToContent": 0,
+                      "isInteractive": 1,
+                      "layout": {
+                        "$type": "inkWidgetLayout",
+                        "anchor": "TopLeft",
+                        "anchorPoint": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "HAlign": "Fill",
+                        "margin": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "padding": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "sizeCoefficient": 1,
+                        "sizeRule": "Fixed",
+                        "VAlign": "Fill"
+                      },
+                      "logicController": {
+                        "HandleId": "2596",
+                        "Data": {
+                          "$type": "PhotoModeGridButton",
+                          "alwaysVisible": 0,
+                          "atlasRef": {
+                            "$type": "redResourceReferenceScriptToken",
+                            "resource": {
+                              "DepotPath": {
+                                "$type": "ResourcePath",
+                                "$storage": "uint64",
+                                "$value": "0"
+                              },
+                              "Flags": "Soft"
+                            }
+                          },
+                          "audioMetadataName": {
+                            "$type": "CName",
+                            "$storage": "string",
+                            "$value": "None"
+                          },
+                          "autoToggleOnInput": 0,
+                          "autoUpdateWidgetState": 0,
+                          "BgWidget": {
+                            "$type": "inkWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2592"
+                            }
+                          },
+                          "ButtonClick": {
+                            "$type": "inkButtonClickCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "buttonData": 0,
+                          "ButtonHoldComplete": {
+                            "$type": "inkButtonHoldCompleteCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "ButtonHoldProgressChanged": {
+                            "$type": "inkButtonProgressChangedCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "ButtonSelectionChanged": {
+                            "$type": "inkButtonSelectionCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "ButtonStateChanged": {
+                            "$type": "inkButtonStateChangeCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "canHold": 0,
+                          "currentImagePart": {
+                            "$type": "CName",
+                            "$storage": "string",
+                            "$value": "None"
+                          },
+                          "DynamicImg": {
+                            "$type": "inkImageWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2589"
+                            }
+                          },
+                          "FrameImg": {
+                            "$type": "inkImageWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2587"
+                            }
+                          },
+                          "HoverWidget": {
+                            "$type": "inkWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2594"
+                            }
+                          },
+                          "imageScalingSpeed": 0,
+                          "index": 0,
+                          "isNavigalbe": 1,
+                          "isToggled": 0,
+                          "opacityScalingSpeed": 0,
+                          "parentGrid": null,
+                          "PlusImg": {
+                            "$type": "inkImageWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2590"
+                            }
+                          },
+                          "selectable": 0,
+                          "selected": 0,
+                          "shouldUpdateScrollController": 0,
+                          "supportsHoldInput": 1,
+                          "ToggleChanged": {
+                            "$type": "inkToggleChangedCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "visibleOnGrid": 0
+                        }
+                      },
+                      "name": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "inkCanvasWidget6"
+                      },
+                      "opacity": 1,
+                      "parentWidget": null,
+                      "propertyManager": null,
+                      "proxyWidget": null,
+                      "renderTransform": {
+                        "$type": "inkUITransform",
+                        "rotation": 0,
+                        "scale": {
+                          "$type": "Vector2",
+                          "X": 1,
+                          "Y": 1
+                        },
+                        "shear": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "translation": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        }
+                      },
+                      "renderTransformPivot": {
+                        "$type": "Vector2",
+                        "X": 0.5,
+                        "Y": 0.5
+                      },
+                      "secondaryControllers": [],
+                      "size": {
+                        "$type": "Vector2",
+                        "X": 162,
+                        "Y": 162
+                      },
+                      "state": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "Default"
+                      },
+                      "style": {
+                        "HandleId": "2597",
+                        "Data": {
+                          "$type": "inkStyleResourceWrapper",
+                          "styleResource": {
+                            "DepotPath": {
+                              "$type": "ResourcePath",
+                              "$storage": "string",
+                              "$value": "base\\gameplay\\gui\\common\\main_colors.inkstyle"
+                            },
+                            "Flags": "Soft"
+                          }
+                        }
+                      },
+                      "tintColor": {
+                        "$type": "HDRColor",
+                        "Alpha": 1,
+                        "Blue": 1,
+                        "Green": 1,
+                        "Red": 1
+                      },
+                      "userData": [],
+                      "visible": 1
+                    }
+                  }
+                },
+                "EmbeddedFiles": []
+              }
+            }
+          },
+          "packageData": {
+            "BufferId": "5",
+            "Flags": 4063232,
+            "Type": "WolvenKit.RED4.Archive.Buffer.RedPackage, WolvenKit.RED4, Version=8.18.0.0, Culture=neutral, PublicKeyToken=null",
+            "Data": {
+              "Version": 4,
+              "Sections": 7,
+              "CruidIndex": 0,
+              "CruidDict": {},
+              "Chunks": [
+                {
+                  "$type": "inkWidgetLibraryItemInstance",
+                  "gameController": null,
+                  "rootResolution": "UltraHD_3840_2160",
+                  "rootWidget": {
+                    "HandleId": "2598",
+                    "Data": {
+                      "$type": "inkCanvasWidget",
+                      "affectsLayoutWhenHidden": 0,
+                      "backendData": {
+                        "HandleId": "2599",
+                        "Data": {
+                          "$type": "inkWidgetBackendData",
+                          "boundLibraryItemName": {
+                            "$type": "CName",
+                            "$storage": "string",
+                            "$value": "None"
+                          },
+                          "isHiddenInEditor": 0,
+                          "isLocked": 0,
+                          "owner": {
+                            "HandleRefId": "2598"
+                          }
+                        }
+                      },
+                      "canSupportFocus": 0,
+                      "childMargin": {
+                        "$type": "inkMargin",
+                        "bottom": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0
+                      },
+                      "childOrder": "Backward",
+                      "children": {
+                        "HandleId": "2600",
+                        "Data": {
+                          "$type": "inkMultiChildren",
+                          "children": [
+                            {
+                              "HandleId": "2601",
+                              "Data": {
+                                "$type": "inkImageWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": {
+                                  "HandleId": "2602",
+                                  "Data": {
+                                    "$type": "inkWidgetBackendData",
+                                    "boundLibraryItemName": {
+                                      "$type": "CName",
+                                      "$storage": "string",
+                                      "$value": "None"
+                                    },
+                                    "isHiddenInEditor": 0,
+                                    "isLocked": 0,
+                                    "owner": {
+                                      "HandleRefId": "2601"
+                                    }
+                                  }
+                                },
+                                "canSupportFocus": 0,
+                                "contentHAlign": "Fill",
+                                "contentVAlign": "Fill",
+                                "effects": [],
+                                "externalDynamicTexture": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "fitToContent": 1,
+                                "horizontalTileCrop": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0.5,
+                                    "Y": 0.5
+                                  },
+                                  "HAlign": "Center",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Center"
+                                },
+                                "logicController": null,
+                                "mirrorType": "NoMirror",
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "frameImg"
+                                },
+                                "nineSliceScale": {
+                                  "$type": "inkMargin",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "right": 0,
+                                  "top": 0
+                                },
+                                "opacity": 1,
+                                "parentWidget": {
+                                  "HandleRefId": "2598"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2603",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 146,
+                                  "Y": 146
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "textureAtlas": {
+                                  "DepotPath": {
+                                    "$type": "ResourcePath",
+                                    "$storage": "string",
+                                    "$value": "base\\gameplay\\gui\\fullscreen\\inventory\\inventory4_atlas.inkatlas"
+                                  },
+                                  "Flags": "Default"
+                                },
+                                "texturePart": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "item_grid_frame3"
+                                },
+                                "tileHAlign": "Left",
+                                "tileType": "NoTile",
+                                "tileVAlign": "Top",
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "useExternalDynamicTexture": 0,
+                                "useNineSliceScale": 0,
+                                "userData": [],
+                                "verticalTileCrop": 0,
+                                "visible": 1
+                              }
+                            },
+                            {
+                              "HandleId": "2604",
+                              "Data": {
+                                "$type": "inkImageWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": {
+                                  "HandleId": "2605",
+                                  "Data": {
+                                    "$type": "inkWidgetBackendData",
+                                    "boundLibraryItemName": {
+                                      "$type": "CName",
+                                      "$storage": "string",
+                                      "$value": "None"
+                                    },
+                                    "isHiddenInEditor": 0,
+                                    "isLocked": 0,
+                                    "owner": {
+                                      "HandleRefId": "2604"
+                                    }
+                                  }
+                                },
+                                "canSupportFocus": 0,
+                                "contentHAlign": "Fill",
+                                "contentVAlign": "Fill",
+                                "effects": [],
+                                "externalDynamicTexture": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "fitToContent": 1,
+                                "horizontalTileCrop": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0.5,
+                                    "Y": 0.5
+                                  },
+                                  "HAlign": "Center",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 6,
+                                    "left": 0,
+                                    "right": 6,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Center"
+                                },
+                                "logicController": null,
+                                "mirrorType": "NoMirror",
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "dynamicImg"
+                                },
+                                "nineSliceScale": {
+                                  "$type": "inkMargin",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "right": 0,
+                                  "top": 0
+                                },
+                                "opacity": 1,
+                                "parentWidget": {
+                                  "HandleRefId": "2598"
+                                },
+                                "propertyManager": null,
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 110,
+                                  "Y": 110
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "textureAtlas": {
+                                  "DepotPath": {
+                                    "$type": "ResourcePath",
+                                    "$storage": "uint64",
+                                    "$value": "0"
+                                  },
+                                  "Flags": "Soft"
+                                },
+                                "texturePart": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "tileHAlign": "Left",
+                                "tileType": "NoTile",
+                                "tileVAlign": "Top",
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 1,
+                                  "Green": 1,
+                                  "Red": 1
+                                },
+                                "useExternalDynamicTexture": 0,
+                                "useNineSliceScale": 0,
+                                "userData": [],
+                                "verticalTileCrop": 0,
+                                "visible": 0
+                              }
+                            },
+                            {
+                              "HandleId": "2606",
+                              "Data": {
+                                "$type": "inkImageWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": {
+                                  "HandleId": "2607",
+                                  "Data": {
+                                    "$type": "inkWidgetBackendData",
+                                    "boundLibraryItemName": {
+                                      "$type": "CName",
+                                      "$storage": "string",
+                                      "$value": "None"
+                                    },
+                                    "isHiddenInEditor": 0,
+                                    "isLocked": 0,
+                                    "owner": {
+                                      "HandleRefId": "2606"
+                                    }
+                                  }
+                                },
+                                "canSupportFocus": 0,
+                                "contentHAlign": "Fill",
+                                "contentVAlign": "Fill",
+                                "effects": [],
+                                "externalDynamicTexture": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "None"
+                                },
+                                "fitToContent": 1,
+                                "horizontalTileCrop": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Centered",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0.5,
+                                    "Y": 0.5
+                                  },
+                                  "HAlign": "Center",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Center"
+                                },
+                                "logicController": null,
+                                "mirrorType": "NoMirror",
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "plusImg"
+                                },
+                                "nineSliceScale": {
+                                  "$type": "inkMargin",
+                                  "bottom": 0,
+                                  "left": 0,
+                                  "right": 0,
+                                  "top": 0
+                                },
+                                "opacity": 1,
+                                "parentWidget": {
+                                  "HandleRefId": "2598"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2608",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 32,
+                                  "Y": 32
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "textureAtlas": {
+                                  "DepotPath": {
+                                    "$type": "ResourcePath",
+                                    "$storage": "string",
+                                    "$value": "base\\gameplay\\gui\\fullscreen\\inventory\\inventory4_atlas.inkatlas"
+                                  },
+                                  "Flags": "Default"
+                                },
+                                "texturePart": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "icon_add"
+                                },
+                                "tileHAlign": "Left",
+                                "tileType": "NoTile",
+                                "tileVAlign": "Top",
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "useExternalDynamicTexture": 0,
+                                "useNineSliceScale": 0,
+                                "userData": [],
+                                "verticalTileCrop": 0,
+                                "visible": 1
+                              }
+                            },
+                            {
+                              "HandleId": "2609",
+                              "Data": {
+                                "$type": "inkRectangleWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": {
+                                  "HandleId": "2610",
+                                  "Data": {
+                                    "$type": "inkWidgetBackendData",
+                                    "boundLibraryItemName": {
+                                      "$type": "CName",
+                                      "$storage": "string",
+                                      "$value": "None"
+                                    },
+                                    "isHiddenInEditor": 0,
+                                    "isLocked": 0,
+                                    "owner": {
+                                      "HandleRefId": "2609"
+                                    }
+                                  }
+                                },
+                                "canSupportFocus": 0,
+                                "effects": [],
+                                "fitToContent": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "HAlign": "Fill",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 6,
+                                    "left": 0,
+                                    "right": 6,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Fill"
+                                },
+                                "logicController": null,
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "bgRect"
+                                },
+                                "opacity": 0.400000006,
+                                "parentWidget": {
+                                  "HandleRefId": "2598"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2611",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 64,
+                                  "Y": 64
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "userData": [],
+                                "visible": 1
+                              }
+                            },
+                            {
+                              "HandleId": "2612",
+                              "Data": {
+                                "$type": "inkRectangleWidget",
+                                "affectsLayoutWhenHidden": 0,
+                                "backendData": {
+                                  "HandleId": "2613",
+                                  "Data": {
+                                    "$type": "inkWidgetBackendData",
+                                    "boundLibraryItemName": {
+                                      "$type": "CName",
+                                      "$storage": "string",
+                                      "$value": "None"
+                                    },
+                                    "isHiddenInEditor": 0,
+                                    "isLocked": 0,
+                                    "owner": {
+                                      "HandleRefId": "2612"
+                                    }
+                                  }
+                                },
+                                "canSupportFocus": 0,
+                                "effects": [],
+                                "fitToContent": 0,
+                                "isInteractive": 0,
+                                "layout": {
+                                  "$type": "inkWidgetLayout",
+                                  "anchor": "Fill",
+                                  "anchorPoint": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "HAlign": "Fill",
+                                  "margin": {
+                                    "$type": "inkMargin",
+                                    "bottom": 6,
+                                    "left": 0,
+                                    "right": 6,
+                                    "top": 0
+                                  },
+                                  "padding": {
+                                    "$type": "inkMargin",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "top": 0
+                                  },
+                                  "sizeCoefficient": 1,
+                                  "sizeRule": "Fixed",
+                                  "VAlign": "Fill"
+                                },
+                                "logicController": null,
+                                "name": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "hoverRect"
+                                },
+                                "opacity": 0.200000003,
+                                "parentWidget": {
+                                  "HandleRefId": "2598"
+                                },
+                                "propertyManager": {
+                                  "HandleId": "2614",
+                                  "Data": {
+                                    "$type": "inkPropertyManager",
+                                    "bindings": [
+                                      {
+                                        "$type": "inkPropertyBinding",
+                                        "propertyName": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "tintColor"
+                                        },
+                                        "stylePath": {
+                                          "$type": "CName",
+                                          "$storage": "string",
+                                          "$value": "MainColors.Red"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "renderTransform": {
+                                  "$type": "inkUITransform",
+                                  "rotation": 0,
+                                  "scale": {
+                                    "$type": "Vector2",
+                                    "X": 1,
+                                    "Y": 1
+                                  },
+                                  "shear": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  },
+                                  "translation": {
+                                    "$type": "Vector2",
+                                    "X": 0,
+                                    "Y": 0
+                                  }
+                                },
+                                "renderTransformPivot": {
+                                  "$type": "Vector2",
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "secondaryControllers": [],
+                                "size": {
+                                  "$type": "Vector2",
+                                  "X": 64,
+                                  "Y": 64
+                                },
+                                "state": {
+                                  "$type": "CName",
+                                  "$storage": "string",
+                                  "$value": "Default"
+                                },
+                                "style": null,
+                                "tintColor": {
+                                  "$type": "HDRColor",
+                                  "Alpha": 1,
+                                  "Blue": 0.347600013,
+                                  "Green": 0.380899996,
+                                  "Red": 1.17610002
+                                },
+                                "userData": [],
+                                "visible": 0
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "effects": [],
+                      "fitToContent": 0,
+                      "isInteractive": 1,
+                      "layout": {
+                        "$type": "inkWidgetLayout",
+                        "anchor": "TopLeft",
+                        "anchorPoint": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "HAlign": "Fill",
+                        "margin": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "padding": {
+                          "$type": "inkMargin",
+                          "bottom": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0
+                        },
+                        "sizeCoefficient": 1,
+                        "sizeRule": "Fixed",
+                        "VAlign": "Fill"
+                      },
+                      "logicController": {
+                        "HandleId": "2615",
+                        "Data": {
+                          "$type": "PhotoModeGridButton",
+                          "alwaysVisible": 0,
+                          "atlasRef": {
+                            "$type": "redResourceReferenceScriptToken",
+                            "resource": {
+                              "DepotPath": {
+                                "$type": "ResourcePath",
+                                "$storage": "uint64",
+                                "$value": "0"
+                              },
+                              "Flags": "Soft"
+                            }
+                          },
+                          "audioMetadataName": {
+                            "$type": "CName",
+                            "$storage": "string",
+                            "$value": "None"
+                          },
+                          "autoToggleOnInput": 0,
+                          "autoUpdateWidgetState": 0,
+                          "BgWidget": {
+                            "$type": "inkWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2609"
+                            }
+                          },
+                          "ButtonClick": {
+                            "$type": "inkButtonClickCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "buttonData": 0,
+                          "ButtonHoldComplete": {
+                            "$type": "inkButtonHoldCompleteCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "ButtonHoldProgressChanged": {
+                            "$type": "inkButtonProgressChangedCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "ButtonSelectionChanged": {
+                            "$type": "inkButtonSelectionCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "ButtonStateChanged": {
+                            "$type": "inkButtonStateChangeCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "canHold": 0,
+                          "currentImagePart": {
+                            "$type": "CName",
+                            "$storage": "string",
+                            "$value": "None"
+                          },
+                          "DynamicImg": {
+                            "$type": "inkImageWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2604"
+                            }
+                          },
+                          "FrameImg": {
+                            "$type": "inkImageWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2601"
+                            }
+                          },
+                          "HoverWidget": {
+                            "$type": "inkWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2612"
+                            }
+                          },
+                          "imageScalingSpeed": 0,
+                          "index": 0,
+                          "isNavigalbe": 1,
+                          "isToggled": 0,
+                          "opacityScalingSpeed": 0,
+                          "parentGrid": null,
+                          "PlusImg": {
+                            "$type": "inkImageWidgetReference",
+                            "widget": {
+                              "HandleRefId": "2606"
+                            }
+                          },
+                          "selectable": 0,
+                          "selected": 0,
+                          "shouldUpdateScrollController": 0,
+                          "supportsHoldInput": 1,
+                          "ToggleChanged": {
+                            "$type": "inkToggleChangedCallback",
+                            "callbackName": {
+                              "$type": "CName",
+                              "$storage": "string",
+                              "$value": "None"
+                            },
+                            "listeners": []
+                          },
+                          "visibleOnGrid": 0
+                        }
+                      },
+                      "name": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "inkCanvasWidget6"
+                      },
+                      "opacity": 1,
+                      "parentWidget": null,
+                      "propertyManager": null,
+                      "proxyWidget": null,
+                      "renderTransform": {
+                        "$type": "inkUITransform",
+                        "rotation": 0,
+                        "scale": {
+                          "$type": "Vector2",
+                          "X": 1,
+                          "Y": 1
+                        },
+                        "shear": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        },
+                        "translation": {
+                          "$type": "Vector2",
+                          "X": 0,
+                          "Y": 0
+                        }
+                      },
+                      "renderTransformPivot": {
+                        "$type": "Vector2",
+                        "X": 0.5,
+                        "Y": 0.5
+                      },
+                      "secondaryControllers": [],
+                      "size": {
+                        "$type": "Vector2",
+                        "X": 162,
+                        "Y": 162
+                      },
+                      "state": {
+                        "$type": "CName",
+                        "$storage": "string",
+                        "$value": "Default"
+                      },
+                      "style": {
+                        "HandleId": "2616",
+                        "Data": {
+                          "$type": "inkStyleResourceWrapper",
+                          "styleResource": {
+                            "DepotPath": {
+                              "$type": "ResourcePath",
+                              "$storage": "string",
+                              "$value": "base\\gameplay\\gui\\common\\main_colors.inkstyle"
+                            },
+                            "Flags": "Default"
+                          }
+                        }
+                      },
+                      "tintColor": {
+                        "$type": "HDRColor",
+                        "Alpha": 1,
+                        "Blue": 1,
+                        "Green": 1,
+                        "Red": 1
+                      },
+                      "userData": [],
+                      "visible": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "rootDefinitionIndex": 0,
+      "rootResolution": "UltraHD_3840_2160",
+      "sequences": [],
+      "version": "Default"
+    },
+    "EmbeddedFiles": []
+  }
+}

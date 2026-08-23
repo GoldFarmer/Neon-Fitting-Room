@@ -1,0 +1,9 @@
+# Generated build and staging output.
+build/
+
+# Local editor and machine configuration.
+.vscode/
+.kiro/settings.local.json
+
+# Developer-local game path configuration.
+tools/local.ps1

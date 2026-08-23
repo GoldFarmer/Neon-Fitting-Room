@@ -1,0 +1,91 @@
+# Neon Fitting Room
+
+Neon Fitting Room is a REDscript and Ink mod for Cyberpunk 2077 that adds searchable Photo Mode card browsers for Equipment-EX outfits, clothing, and native character controls.
+
+The canonical source, implementation documentation, and issue tracker are maintained at
+[GoldFarmer/Neon-Fitting-Room](https://github.com/GoldFarmer/Neon-Fitting-Room). Download published
+releases from [Neon Fitting Room on Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/34646).
+
+## Runtime dependencies
+
+Required:
+
+- Cyberpunk 2077 with compatible REDscript and RED4ext installations.
+- Equipment-EX, which provides NFR's saved-outfit, Wardrobe-item, attachment-slot, and Photo Mode preview authority.
+- Codeware, which provides NFR's service lifecycle, localization, diagnostics, and UI facilities.
+
+Optional:
+
+- Mod Settings. When installed, it exposes card density, tooltip, outfit-icon, and experimental NPC Clothing preferences; otherwise NFR uses its shipped defaults.
+- NPC Outfit Manager. NFR works without it. Its TweakDB changes broaden NPC Clothing availability by adding Equipment-EX slots to character records that contain `AttachmentSlots.Chest`.
+- PhotoMode-EX. NFR is compatible with it but does not call its runtime API.
+
+Cyber Engine Tweaks provides a process-local fallback for enabling NPC Clothing when Mod Settings is absent, but is not otherwise a runtime dependency. Red Hot Tools, Red CLI, WkMCP, and WolvenKit are developer or ecosystem tools, not NFR runtime dependencies.
+
+## Developer setup
+
+Set a local PowerShell environment variable to the Cyberpunk 2077 game root; do not commit an absolute game path.
+
+```powershell
+$env:NFR_GAME_DIR = 'C:\Program Files (x86)\Steam\steamapps\common\Cyberpunk 2077'
+```
+
+### Required development tools
+
+NFR's Windows development workflow requires the following tools in addition to the game's REDscript, RED4ext, Equipment-EX, and Codeware dependencies.
+
+#### Red CLI
+
+Install [rayshader/cp2077-red-cli](https://github.com/rayshader/cp2077-red-cli) and make `red-cli.exe` available on `PATH` when using Red CLI-aware editor or ecosystem workflows. NFR's repository-owned PowerShell scripts remain the authoritative build, deployment, compiler-preflight, and packaging path.
+
+`red.config.json` is committed as the Red CLI project configuration. It deliberately omits the local game path; set `REDCLI_GAME` (or rely on Red CLI's game auto-detection) before invoking Red CLI directly.
+
+#### Red Hot Tools
+
+Install [psiberx/cp2077-red-hot-tools](https://github.com/psiberx/cp2077-red-hot-tools) into the Cyberpunk 2077 game directory when using hot reload or live Ink inspection. NFR does not require it for deployment or compiler failure handling, but its UI/widget inspection and archive reload features are useful for Photo Mode interface work.
+
+Keep Red Hot Tools, REDscript, RED4ext, ArchiveXL, Cyber Engine Tweaks, and the game version mutually compatible according to the Red Hot Tools release notes. Hot reload has known limits: structural changes such as new fields or callback contracts can require a full game-session restart.
+
+#### Debug logging declarations
+
+Release packages use a no-op logging backend and do not need shared logging declarations. Debug
+builds write diagnostics through the engine `FTLog` APIs, which require the shared global
+declarations from the [REDscript logging reference](https://wiki.redmodding.org/redscript/references-and-examples/logging) at `r6\scripts\Logs.reds`. `tools\dev.ps1 -BuildFlavor Debug` creates that file when it is absent; `-BuildFlavor Release` removes it only when it exactly matches NFR's template.
+
+They expose `LogChannel*`, `Log*`, and `FTLog*` functions. NFR's debug backend uses the `FTLog` severity functions once per message and adds Codeware call-site context to errors. This file is a game-level development prerequisite: do not place it under NFR or include it in an NFR release ZIP, because multiple bundled copies would conflict. A Release development install can remove this shared file, so do not use that mode while another source mod needs the declarations for debug logging.
+
+Commands are repository-owned PowerShell scripts:
+
+- `tools\verify.ps1` validates project/release structure, semantic versioning, and REDscript source-quality checks.
+- `tools\compile-redscript.ps1 -GameDir $env:NFR_GAME_DIR` compiles the complete installed REDscript environment against an isolated copy of `r6\cache\modded\final.redscripts`. It writes diagnostics beneath `build\redscript-preflight`, does not alter the launch cache, and does not open the game's REDscript error popup.
+- `tools\dev.ps1 -GameDir $env:NFR_GAME_DIR -BuildFlavor Debug -WhatIf` previews the default debug installation. `Debug` installs generated `NfrBuildProfile.reds` and `NfrLogBackend.reds` files and creates missing root-level `Logs.reds`; `Release` installs a no-op logging backend and conditionally removes that declarations file. Ordinary development installs rebuild the Ink archive and run the isolated REDscript preflight; use `-SkipInkBuild` or `-SkipRedscriptCompile` only when deliberately bypassing that work.
+- `tools\package.ps1 -BuildFlavor Release` creates the publishable `build\release\Neon Fitting Room-<version>-release.zip` with a SHA-256 checksum. `tools\package.ps1 -BuildFlavor Debug` creates the non-publishable `build\debug\Neon Fitting Room-<version>-debug.zip`. Packaging extracts each archive, verifies the game-root `archive` and `r6` payloads, validates the Ink archive, generated build profile, and generated logging backend, and rejects a release archive with a native logging call.
+- `tools\smoke.ps1` opens the versioned in-game test checklist.
+
+The project-level `.redscript` file configures source roots for REDscript IDE. Configure the editor extension with your own game directory. The compiler preflight requires a prior successful game launch so `r6\cache\modded\final.redscripts` exists; it validates all installed REDscript mods together and therefore reports errors from any broken installed mod as well as NFR.
+
+The build profile is intentionally separate from CET and Mod Settings controls. Release builds contain no native logging calls. Debug builds default to TRACE, DEBUG, INFO, WARN, and ERROR; use a debug package with the shared declarations installed when diagnostics are required.
+
+#### WolvenKit CLI
+
+Install [WolvenKit/WolvenKit](https://github.com/WolvenKit/WolvenKit) and configure the WkMCP daemon used by NFR's repository scripts. Set `WKMCP_DAEMON` to the local `WkDaemon.dll` path and make `dotnet` available on `PATH`.
+
+```powershell
+$env:WKMCP_DAEMON = 'C:\Tools\wkmcp\daemon\WkDaemon.dll'
+```
+
+`tools\build-ink.ps1` uses WolvenKit conversion and packing operations to compile `assets\ink-source\nfr\ui\nfr_photomode_static_panel.inkwidget.json` and produce `build\ink\NeonFittingRoom.archive`. Development installation and packaging rebuild and validate this archive and include it at its game-relative release path.
+
+## Release layout
+
+The release ZIP contains only the game-root `archive` and `r6` directories. Extract the entire ZIP into the Cyberpunk 2077 game directory so that NFR installs at `archive\pc\mod\NeonFittingRoom.archive` and `r6\scripts\NeonFittingRoom\...`. The bundled README is kept inside that NFR script directory, not in the game root.
+
+## License and third-party terms
+
+Neon Fitting Room's original source code is licensed under the [MIT License](LICENSE), copyright © 2026 Stephen R. Fonden.
+
+This license applies only to Neon Fitting Room's original code. Cyberpunk 2077, its assets, and the required or optional third-party mods remain subject to their respective licenses and terms. Use and distribution of NFR as a Cyberpunk 2077 mod must comply with CD PROJEKT RED's game terms and Fan Content Guidelines. NFR does not include Equipment-EX, Codeware, Mod Settings, NPC Outfit Manager, PhotoMode-EX, Cyber Engine Tweaks, Red CLI, Red Hot Tools, WkMCP, WolvenKit, or shared `Logs.reds` in its release archive.
+
+## Development disclosure
+
+Neon Fitting Room was developed using Kiro IDE with assistance from OpenAI Codex. AI was used as a coding and documentation collaborator for research, implementation drafts, and testing support. GoldFarmer directed the work, reviewed changes, and performed in-game validation.

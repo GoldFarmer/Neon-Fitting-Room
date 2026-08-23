@@ -1,0 +1,7 @@
+{
+  "source": ["src"],
+  "format": {
+    "indent": 2,
+    "maxLineLength": 120
+  }
+}

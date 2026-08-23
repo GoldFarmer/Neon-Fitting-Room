@@ -1,0 +1,23 @@
+{
+  "name": "Neon Fitting Room",
+  "version": "0.1.0",
+  "game": "Cyberpunk 2077",
+  "runtime": "REDscript + RED4ext",
+  "dependencies": {
+    "red4ext": "required",
+    "redscript": "required",
+    "equipmentEx": "required",
+    "codeware": "required",
+    "modSettings": "optional",
+    "photoModeEx": "optional"
+  },
+  "recommendedCompatible": [
+    "https://www.nexusmods.com/cyberpunk2077/mods/31327",
+    "https://www.nexusmods.com/cyberpunk2077/mods/24427",
+    "https://www.nexusmods.com/cyberpunk2077/mods/24253",
+    "https://www.nexusmods.com/cyberpunk2077/mods/22872",
+    "https://www.nexusmods.com/cyberpunk2077/mods/31176",
+    "https://www.nexusmods.com/cyberpunk2077/mods/34353",
+    "https://www.nexusmods.com/cyberpunk2077/mods/26742"
+  ]
+}

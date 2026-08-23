@@ -1,0 +1,7 @@
+{
+  "name": "Neon Fitting Room",
+  "version": "0.1.0",
+  "stage": "build/stage/red-cli",
+  "src": "src",
+  "output": "r6/scripts"
+}
