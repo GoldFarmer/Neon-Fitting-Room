@@ -901,21 +901,8 @@ private func ApplyNfrOutfitIconSetting() -> Void {
 private func BuildNfrCurrentEquippedOutfitParts(
   outfitSystem: wref<OutfitSystem>
 ) -> array<ref<NfrOutfitPartSnapshot>> {
-  let result: array<ref<NfrOutfitPartSnapshot>>;
-  let part: ref<NfrOutfitPartSnapshot>;
-  let itemID: ItemID;
-  if !IsDefined(outfitSystem) { return result; }
-  for slotID in outfitSystem.GetOutfitSlots() {
-    itemID = outfitSystem.GetEquippedItemInSlot(slotID);
-    if ItemID.IsValid(itemID) {
-      part = new NfrOutfitPartSnapshot();
-      part.itemID = itemID;
-      part.slotID = slotID;
-      part.displayName = outfitSystem.GetItemName(itemID);
-      ArrayPush(result, part);
-    }
-  }
-  return result;
+  if !IsDefined(outfitSystem) { return []; }
+  return NfrOutfitCatalog.ReadActiveOutfitParts();
 }
 
 /** Draws a clear-state cross for the No Outfit utility card.

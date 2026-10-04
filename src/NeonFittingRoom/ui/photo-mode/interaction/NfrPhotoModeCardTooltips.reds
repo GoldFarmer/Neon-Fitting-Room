@@ -104,14 +104,12 @@ private func ShowNfrOutfitCardTooltip(target: wref<inkWidget>) -> Bool {
 private func BuildNfrOutfitTooltipDescription(option: PhotoModeOptionSelectorData) -> String {
   let outfitSystem = OutfitSystem.GetInstance(this.GetPlayerControlledObject().GetGame());
   let parts: array<ref<OutfitPart>>;
-  let itemID: ItemID;
   let result: String;
   if !IsDefined(outfitSystem) || Equals(option.optionData, 3302) { return result; }
   if Equals(option.optionData, 3303) {
-    for slotID in outfitSystem.GetOutfitSlots() {
-      itemID = outfitSystem.GetEquippedItemInSlot(slotID);
-      if ItemID.IsValid(itemID) {
-        result = this.AppendNfrTooltipLine(result, outfitSystem.GetItemName(itemID));
+    for activePart in NfrOutfitCatalog.ReadActiveOutfitParts() {
+      if IsDefined(activePart) && ItemID.IsValid(activePart.itemID) {
+        result = this.AppendNfrTooltipLine(result, activePart.displayName);
       }
     }
     return result;

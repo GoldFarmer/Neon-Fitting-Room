@@ -79,6 +79,46 @@ public abstract class NfrOutfitCatalog {
     }
     return snapshots;
   }
+
+  /**
+   * Reads the active outfit visuals through stock Equipment-EX slot enumeration and the vanilla
+   * transaction system.
+   *
+   * Equipment-EX exposes the occupied slot IDs but keeps its logical active parts private. Its
+   * visuals are attached to those slots as preview items, whose record identities remain suitable
+   * for NFR's display names and icon lookups.
+   *
+   * @param None.
+   * @return Independent snapshots for each populated active outfit slot.
+   * @errors Missing runtime systems, stale slots, and invalid preview items are omitted.
+   */
+  public static func ReadActiveOutfitParts() -> array<ref<NfrOutfitPartSnapshot>> {
+    let snapshots: array<ref<NfrOutfitPartSnapshot>>;
+    let game = GetGameInstance();
+    let outfitSystem = OutfitSystem.GetInstance(game);
+    let player = GameInstance.GetPlayerSystem(game).GetLocalPlayerMainGameObject();
+    let transactionSystem = GameInstance.GetTransactionSystem(game);
+    let snapshot: ref<NfrOutfitPartSnapshot>;
+    let itemID: ItemID;
+
+    if !IsDefined(outfitSystem) || !IsDefined(player) || !IsDefined(transactionSystem) {
+      return snapshots;
+    }
+    for slotID in outfitSystem.GetUsedSlots() {
+      let itemObject = transactionSystem.GetItemInSlot(player, slotID);
+      if IsDefined(itemObject) {
+        itemID = itemObject.GetItemID();
+        if ItemID.IsValid(itemID) {
+          snapshot = new NfrOutfitPartSnapshot();
+          snapshot.itemID = itemID;
+          snapshot.slotID = slotID;
+          snapshot.displayName = outfitSystem.GetItemName(itemID);
+          ArrayPush(snapshots, snapshot);
+        }
+      }
+    }
+    return snapshots;
+  }
 }
 
 /**
@@ -104,4 +144,12 @@ public abstract class NfrOutfitCatalog {
    * @errors None.
    */
   public static func ReadSavedOutfits() -> array<ref<NfrOutfitSnapshot>> { return []; }
+
+  /**
+   * Returns no active outfit parts because Equipment-EX is unavailable.
+   * @param None.
+   * @return An empty snapshot array.
+   * @errors None.
+   */
+  public static func ReadActiveOutfitParts() -> array<ref<NfrOutfitPartSnapshot>> { return []; }
 }
