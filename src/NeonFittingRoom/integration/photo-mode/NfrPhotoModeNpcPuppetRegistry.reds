@@ -1,17 +1,69 @@
 module NeonFittingRoom
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.{OutfitSystem}
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(PlayerPuppet)
 private let m_nfrActivePhotoModeNpcPuppet: wref<gamePuppet>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(PlayerPuppet)
 private let m_nfrPhotoModeNpcPuppets: array<wref<gamePuppet>>;
 
 /** Registers a concrete NPC Photo Mode puppet and makes it the active clothing target.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param puppet Concrete non-customizable Photo Mode puppet. @return None. @errors Null clears the target. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(PlayerPuppet)
@@ -27,6 +79,19 @@ public func RegisterNfrPhotoModeNpcPuppet(puppet: wref<gamePuppet>) -> Void {
 }
 
 /** Returns the active NPC Photo Mode puppet for target-specific controls.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Current NPC target or null. @errors Released puppets resolve as null. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(PlayerPuppet)
@@ -35,6 +100,19 @@ public func GetNfrActivePhotoModeNpcPuppet() -> wref<gamePuppet> {
 }
 
 /** Selects an already-created Photo Mode NPC by the native EDIT CHARACTER option label.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param optionText Native attribute-68 label. @param optionData Native selector identity for traces.
  * @return True when a live registered puppet matched. @errors Ambiguous or absent labels retain the
  * current target and return false. */
@@ -72,6 +150,19 @@ public func SelectNfrPhotoModeNpcPuppet(optionText: String, optionData: Int32) -
 }
 
 /** Clears session-only NPC registry state during Photo Mode teardown.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors None. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(PlayerPuppet)
@@ -81,6 +172,19 @@ public func ResetNfrPhotoModeNpcPuppets() -> Void {
 }
 
 /** Registers Photo Mode's rendered NPC puppet without changing inventory.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param isCurrentPlayerObjectCustomizable Native source-character capability flag.
  * @return None. @errors Undefined source or preview puppets are logged without mutation. */
 @if(ModuleExists("EquipmentEx"))
@@ -105,6 +209,19 @@ private final func SetupInventory(isCurrentPlayerObjectCustomizable: Bool) -> Vo
 }
 
 /** Formats stable runtime identity needed to distinguish Photo Mode puppet instances.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param role Relationship to the component. @param puppet Candidate puppet.
  * @return Compact identity string. @errors Missing puppets are reported as undefined. */
 @if(ModuleExists("EquipmentEx"))

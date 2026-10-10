@@ -1,6 +1,19 @@
 module NeonFittingRoom
 
 /** Reads the mesh-like resource used by functional NPC appearance discovery and controls.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param component Component to inspect. @return Resource path or an empty string when unsupported.
  * @errors Missing or unsupported components return an empty string. */
 @if(ModuleExists("EquipmentEx"))
@@ -21,7 +34,15 @@ private func GetNfrNpcRefitMeshPath(component: ref<IComponent>) -> String {
   return "";
 }
 
-/** Retains one appearance-owned mesh and its NFR-controlled visibility state. */
+/**
+ * Retains one appearance-owned mesh and its NFR-controlled visibility state.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 public class NfrNpcAppearanceMeshEntry extends IScriptable {
   public let components: array<ref<IComponent>>;
@@ -31,7 +52,15 @@ public class NfrNpcAppearanceMeshEntry extends IScriptable {
   public let visible: Bool;
 }
 
-/** Retains component visibility choices without retaining appearance-owned component references. */
+/**
+ * Retains component visibility choices without retaining appearance-owned component references.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrNpcAppearanceVisibilityState extends IScriptable {
   public let target: wref<gamePuppet>;
@@ -40,19 +69,77 @@ private class NfrNpcAppearanceVisibilityState extends IScriptable {
   public let visible: array<Bool>;
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcAppearanceControl: ref<NfrPhotoModeOwnedExpandableControl>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcAppearanceMeshes: array<ref<NfrNpcAppearanceMeshEntry>>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcAppearanceVisibilityStates: array<ref<NfrNpcAppearanceVisibilityState>>;
 
 /** Builds the NPC-only multi-select appearance-mesh browser ahead of item-slot rows.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param container Clothing child container. @param target Active retained NPC.
  * @param referenceRow Native row geometry. @param referenceDisclosure Native disclosure geometry.
  * @return Whether a control with at least one candidate was mounted.
@@ -167,6 +254,19 @@ private func BuildNfrNpcAppearanceBrowser(
 /** Selects appearance-associated skinned meshes while excluding anatomical body geometry.
  * Hair and ambiguous `i1_` meshes are intentionally included because this control makes no slot
  * claim; every card directly toggles the named component.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param component Candidate component. @param meshPath Resolved resource path.
  * @return Whether the component should be exposed. @errors Unknown component classes are excluded. */
 @if(ModuleExists("EquipmentEx"))
@@ -191,6 +291,19 @@ private func IsNfrNpcAppearanceMeshCandidate(component: ref<IComponent>, meshPat
 }
 
 /** Expands or collapses the NPC Appearance component cards.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return Whether the event was handled.
  * @errors Invalid events or absent controls are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -221,6 +334,19 @@ protected cb func OnNfrNpcMeshAppearanceLineReleased(evt: ref<inkPointerEvent>) 
 }
 
 /** Toggles one appearance mesh, or hides every listed mesh for the NONE card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Card release. @return Whether a represented card was handled.
  * @errors Invalid events and stale card identities are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -258,6 +384,19 @@ protected cb func OnNfrNpcMeshAppearanceCardReleased(evt: ref<inkPointerEvent>) 
 }
 
 /** Applies one retained visibility choice through REDscript's component toggle API.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param entry Retained mesh identity. @param visible Desired visibility.
  * @return None. @errors Released components are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -285,6 +424,19 @@ private func SetNfrNpcAppearanceMeshVisible(
 }
 
 /** Finds or creates retained appearance-component state for one NPC.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Retained Photo Mode NPC. @param create Whether absence creates state.
  * @return Matching state or null. @errors Missing targets return null. */
 @if(ModuleExists("EquipmentEx"))
@@ -309,6 +461,19 @@ private func GetNfrNpcAppearanceVisibilityState(
 }
 
 /** Stores one desired component visibility by stable name-and-resource signature.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Owning NPC. @param signature Component signature. @param visible Desired state.
  * @return None. @errors Missing targets or signatures leave state unchanged. */
 @if(ModuleExists("EquipmentEx"))
@@ -329,6 +494,19 @@ private func SetNfrNpcAppearanceVisibilityState(
 }
 
 /** Reapplies retained visibility to newly activated or reconstructed NPC components.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Active NPC. @return None. @errors Missing state or components are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -360,6 +538,19 @@ public func ReplayNfrNpcAppearanceVisibilityState(target: wref<gamePuppet>) -> V
 }
 
 /** Removes retained component choices when the NPC's native Appearance changes.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target NPC whose component collection is being replaced. @return None.
  * @errors Missing targets leave other NPC states unchanged. */
 @if(ModuleExists("EquipmentEx"))
@@ -378,6 +569,19 @@ public func ClearNfrNpcAppearanceVisibilityState(target: wref<gamePuppet>) -> Vo
 }
 
 /** Mirrors Clothing's count-label convention using only visible appearance meshes.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing UI state is ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -396,6 +600,19 @@ private func UpdateNfrNpcAppearanceStatus() -> Void {
 }
 
 /** Applies independent selected styling to every visible component card and to NONE when empty.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing card internals are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -434,6 +651,19 @@ private func UpdateNfrNpcAppearanceCardVisuals() -> Void {
 }
 
 /** Removes the NPC Appearance row and its callbacks without changing component visibility.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)

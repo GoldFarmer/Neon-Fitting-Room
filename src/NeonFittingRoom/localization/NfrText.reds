@@ -2,6 +2,7 @@ module NeonFittingRoom
 
 /** Resolves first-release UI text through Codeware's localization registry. */
 public abstract class NfrText {
+
   /** @param key Registered localization key. @return Localized text. @errors English is the fallback. */
   private static func Resolve(key: CName) -> String { return GetLocalizedTextByKey(key); }
 

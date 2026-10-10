@@ -19,6 +19,7 @@ public enum NfrLogLevel {
  * All NFR code uses this facade so generated debug and release backends remain interchangeable.
  */
 public abstract class NfrLog {
+
   /**
    * Records detailed development trace information.
    *

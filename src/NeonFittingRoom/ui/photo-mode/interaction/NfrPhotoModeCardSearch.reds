@@ -4,6 +4,7 @@ import Codeware.UI.*
 
 /** Defines shared timing for every NFR search field. */
 public abstract class NfrPhotoModeSearchPolicy {
+
   /** Returns the idle interval required before filtering. @param None.
    * @return Seconds after the latest input. @errors None. */
   public static func DebounceSeconds() -> Float = 0.45;
@@ -21,15 +22,53 @@ public class NfrPhotoModeCardSearchBinding extends IScriptable {
   public let generation: Int32;
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCardSearchBindings: array<ref<NfrPhotoModeCardSearchBinding>>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCardSearchFocusReleaseRegistered: Bool;
 
-/** Applies only the newest query for one search binding. */
+/**
+ * Applies only the newest query for one search binding.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrCardSearchDebounceCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -59,6 +98,19 @@ private class NfrCardSearchDebounceCallback extends DelayCallback {
 }
 
 /** Adds or refreshes the common expanded-card search field.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param browser Card collection. @param surface Surface whose height follows filtered cards.
  * @param labels Labels aligned with browser cards. @param utilityCount Leading action cards hidden during search.
  * @return None. @errors Missing surfaces leave the browser unchanged. */
@@ -120,6 +172,19 @@ public func EnsureNfrCardSearch(
 
 /** Moves an existing input outside card content while that content is rebuilt.
  * The same `HubTextInput` instance is reattached by `EnsureNfrCardSearch`, preserving caret state.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param browser Browser being rebuilt. @return None. @errors Missing bindings are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -129,7 +194,23 @@ public func DetachNfrCardSearchForRebuild(browser: ref<NfrExpandableCardBrowser>
   binding.input.Reparent(browser.host);
 }
 
-/** Finds the binding for a browser. @param browser Browser identity. @return Binding or null. @errors None. */
+/**
+ * Finds the binding for a browser.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param browser Browser identity. @return Binding or null. @errors None.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 private func FindNfrCardSearch(
@@ -143,7 +224,20 @@ private func FindNfrCardSearch(
   return null;
 }
 
-/** Debounces input from any registered card search. @param widget Input root. @return True.
+/** Debounces input from any registered card search.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param widget Input root. @return True.
  * @errors Unknown inputs are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -166,7 +260,20 @@ protected cb func OnNfrCardSearchInput(widget: wref<inkWidget>) -> Bool {
   return false;
 }
 
-/** Applies a non-stale debounced query. @param binding Search binding. @param generation Generation.
+/** Applies a non-stale debounced query.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param binding Search binding. @param generation Generation.
  * @return None. @errors Stale requests are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -181,6 +288,19 @@ public func ApplyNfrCardSearchGeneration(
 }
 
 /** Filters and compacts one card collection without changing card identities or source ordering.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param binding Search binding. @param query User-entered label fragment. @return None.
  * @errors Missing retained widgets are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -206,6 +326,19 @@ private func ApplyNfrCardSearch(
 }
 
 /** Reapplies the committed grid density to every retained searchable card browser.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Released bindings are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -222,6 +355,19 @@ public func RefreshNfrCardGridSettings() -> Void {
 }
 
 /** Filters and compacts a card collection while preserving authoritative card identities.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param browser Card collection. @param surface Height-owning surface.
  * @param cardContent Optional nested card canvas. @param usesSeparateCardContent Whether nested.
  * @param labels Labels aligned with cards. @param utilityCount Leading actions hidden in search.
@@ -273,7 +419,23 @@ public func ApplyNfrCardCollectionFilter(
   surface.SetHeight(browser.contentHeight);
 }
 
-/** Clears one browser's query before collapse. @param browser Browser. @return None. @errors None. */
+/**
+ * Clears one browser's query before collapse.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param browser Browser. @return None. @errors None.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 public func ResetNfrCardSearch(browser: ref<NfrExpandableCardBrowser>) -> Void {
@@ -288,6 +450,19 @@ public func ResetNfrCardSearch(browser: ref<NfrExpandableCardBrowser>) -> Void {
 }
 
 /** Removes a binding before its surface children are rebuilt.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param browser Browser. @return None. @errors Missing browsers and bindings are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -312,6 +487,19 @@ public func ReleaseNfrCardSearch(browser: ref<NfrExpandableCardBrowser>) -> Void
 }
 
 /** Releases keyboard focus when a click lands outside all search subtrees.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Global pointer release. @return False so normal activation continues.
  * @errors Missing and non-click events are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -331,7 +519,23 @@ protected cb func OnNfrCardSearchGlobalRelease(evt: ref<inkPointerEvent>) -> Boo
   return false;
 }
 
-/** Returns keyboard ownership to Photo Mode. @param None. @return None. @errors None. */
+/**
+ * Returns keyboard ownership to Photo Mode.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param None. @return None. @errors None.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 public func ReleaseNfrCardSearchFocus() -> Void {
@@ -344,6 +548,19 @@ public func ReleaseNfrCardSearchFocus() -> Void {
 }
 
 /** Releases transient search controls with the Photo Mode widget tree.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)

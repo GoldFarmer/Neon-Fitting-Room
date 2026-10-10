@@ -1,6 +1,14 @@
 module NeonFittingRoom
 
-/** Declares Neon Fitting Room's persistent user choices when Mod Settings is installed. */
+/**
+ * Declares Neon Fitting Room's persistent user choices when Mod Settings is installed.
+ *
+ * @dependencies {
+ *   "id": "modSettings",
+ *   "adopted": "0.2.21",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("ModSettingsModule"))
 public class NfrModSettings {
   @runtimeProperty("ModSettings.mod", "NFR-Mod-Name")
@@ -41,7 +49,15 @@ public class NfrModSettings {
 
 /** Resolves optional Mod Settings values behind a stable, safe-default boundary. */
 public abstract class NfrSettings {
+
   /** Returns the global number of cards rendered per expandable-browser row.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return Committed value clamped to the supported range.
    * @errors Missing settings preserve the eight-card default. */
   @if(ModuleExists("ModSettingsModule"))
@@ -60,11 +76,25 @@ public abstract class NfrSettings {
   }
 
   /** Preserves the eight-card default when Mod Settings is unavailable.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return Eight. @errors None. */
   @if(!ModuleExists("ModSettingsModule"))
   public static func GetCardsPerRow() -> Int32 { return 8; }
 
   /** Returns whether outfit-card icon collages are enabled.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return The committed value. @errors Missing settings preserve the enabled default. */
   @if(ModuleExists("ModSettingsModule"))
   public static func AreOutfitIconsEnabled() -> Bool {
@@ -82,11 +112,25 @@ public abstract class NfrSettings {
   }
 
   /** Preserves the enabled default when Mod Settings is unavailable.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return True. @errors None. */
   @if(!ModuleExists("ModSettingsModule"))
   public static func AreOutfitIconsEnabled() -> Bool { return true; }
 
   /** Returns whether hover tooltips are enabled for NFR cards.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return The committed value. @errors Missing settings preserve the enabled default. */
   @if(ModuleExists("ModSettingsModule"))
   public static func AreCardTooltipsEnabled() -> Bool {
@@ -104,11 +148,25 @@ public abstract class NfrSettings {
   }
 
   /** Preserves the enabled default when Mod Settings is unavailable.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return True. @errors None. */
   @if(!ModuleExists("ModSettingsModule"))
   public static func AreCardTooltipsEnabled() -> Bool { return true; }
 
   /** Returns whether the complete experimental NPC Clothing feature is enabled.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return The committed opt-in value. @errors Missing settings default to false. */
   @if(ModuleExists("ModSettingsModule"))
   public static func IsNpcClothingEnabled() -> Bool {
@@ -126,6 +184,13 @@ public abstract class NfrSettings {
   }
 
   /** Resolves the process-local CET override when Mod Settings is unavailable.
+   *
+   * @dependencies {
+   *   "id": "modSettings",
+   *   "adopted": "0.2.21",
+   *   "min": "TBD"
+   * }
+   *
    * @param None. @return The session override, disabled by default.
    * @errors Missing or early configuration services safely return false. */
   @if(!ModuleExists("ModSettingsModule"))

@@ -4,6 +4,7 @@ import Codeware.Localization.*
 
 /** Defines the first-release English localization package. */
 public class NfrEnglishLocalization extends ModLocalizationPackage {
+
   /** Registers English NFR text. @param None. @return None. @errors None. */
   protected func DefineTexts() -> Void {
     this.Text("NFR-Mod-Name", "Neon Fitting Room");
@@ -43,6 +44,7 @@ public class NfrEnglishLocalization extends ModLocalizationPackage {
 
 /** Supplies localized NFR text and falls back to English for unsupported languages. */
 public class NfrLocalizationProvider extends ModLocalizationProvider {
+
   /** Resolves a language package. @param language Active language.
    * @return English package. @errors Unsupported languages use English. */
   public func GetPackage(language: CName) -> ref<ModLocalizationPackage> {

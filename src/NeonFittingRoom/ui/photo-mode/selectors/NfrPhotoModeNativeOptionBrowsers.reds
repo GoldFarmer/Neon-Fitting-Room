@@ -6,6 +6,19 @@ public class NfrNativeOptionBrowserAdapter extends IScriptable {
 }
 
 /** Reports how many options are retained by a native Photo Mode selector.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Current selector option count.
  * @errors An unconfigured selector returns zero. */
 @if(ModuleExists("EquipmentEx"))
@@ -15,6 +28,19 @@ public func GetNfrOptionSelectorCount() -> Int32 {
 }
 
 /** Copies one retained native option without exporting the owning array.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param index Zero-based native display index. @return Option at the requested index.
  * @errors Callers must validate the index against `GetNfrOptionSelectorCount`. */
 @if(ModuleExists("EquipmentEx"))
@@ -23,71 +49,319 @@ public func GetNfrOptionSelectorValue(index: Int32) -> PhotoModeOptionSelectorDa
   return this.m_OptionSelectorValues[index];
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCategoryAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrPoseAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpressionAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCategoryOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrPoseOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpressionOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableScrollRestoreOffset: Float;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableScrollRestorePending: Bool;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableScrollAnchor: wref<inkWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableScrollAnchorY: Float;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableScrollAnchorScaleY: Float;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableScrollGeneration: Uint32;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableLayoutRoot: wref<inkVerticalPanel>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableAnchorBranch: wref<inkWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandableLayoutHeightBefore: Float;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrExpandablePrefixHeightBefore: Float;
 
-/** Refreshes outer Photo Mode scrolling after a native option browser changes measured height. */
+/**
+ * Refreshes outer Photo Mode scrolling after a native option browser changes measured height.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrNativeOptionScrollRefreshCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -114,7 +388,15 @@ private class NfrNativeOptionScrollRefreshCallback extends DelayCallback {
   }
 }
 
-/** Corrects residual header movement after the restored scroll offset reaches Ink layout. */
+/**
+ * Corrects residual header movement after the restored scroll offset reaches Ink layout.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrExpandableScrollAnchorCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -146,7 +428,15 @@ private class NfrExpandableScrollAnchorCallback extends DelayCallback {
   }
 }
 
-/** Reapplies native-derived Category and Pose label geometry after fit-to-content layout settles. */
+/**
+ * Reapplies native-derived Category and Pose label geometry after fit-to-content layout settles.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrNativeOptionLayoutRefreshCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -167,7 +457,15 @@ private class NfrNativeOptionLayoutRefreshCallback extends DelayCallback {
   }
 }
 
-/** Refreshes native selector options and selection after Photo Mode finishes an arrow/card action. */
+/**
+ * Refreshes native selector options and selection after Photo Mode finishes an arrow/card action.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrNativeOptionStateRefreshCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -189,6 +487,19 @@ private class NfrNativeOptionStateRefreshCallback extends DelayCallback {
 }
 
 /** Attaches Category and Pose browsers after Photo Mode has constructed their native rows.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param reversedUI Host orientation. @return Host callback result. @errors Missing rows are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)
@@ -259,6 +570,19 @@ protected cb func OnShow(reversedUI: Bool) -> Bool {
 }
 
 /** Adds an NFR-owned browser after a native row without changing the row's list ownership.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param attribute Native attribute key. @param controlID Stable browser identity.
  * @param options Current native options. @param hostName Owned sibling host name.
  * @param disclosureName Owned disclosure name. @param toggleCallback Toggle callback.
@@ -301,6 +625,19 @@ private func AttachNfrNativeOptionSiblingBrowser(
 }
 
 /** Converts native options into the reusable control model without exporting the native array.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param controlID Stable control identity. @param options Controller-owned indexed copy.
  * @return Reusable ordered model. @errors Empty input produces an empty model. */
 @if(ModuleExists("EquipmentEx"))
@@ -339,6 +676,19 @@ private func CreateNfrNativeOptionControlModel(
 }
 
 /** Replaces the reusable presentation model from the current typed native option copy.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Target adapter. @param options Current indexed native options. @return None.
  * @errors A missing adapter is ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -357,6 +707,19 @@ private func UpdateNfrNativeOptionAdapterItems(
 }
 
 /** Reads the native selector's retained options one entry at a time.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param attribute Native attribute key. @return Exact current native options.
  * @errors A missing menu item returns an empty array and leaves the native control untouched. */
 @if(ModuleExists("EquipmentEx"))
@@ -376,6 +739,19 @@ private func ReadNfrNativeOptionValues(attribute: Uint32) -> array<PhotoModeOpti
 }
 
 /** Toggles the native Category browser without consuming arrow hit areas.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when toggled. @errors Invalid events are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -389,6 +765,19 @@ protected cb func OnNfrCategoryLineReleased(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Toggles the native Pose browser without consuming arrow hit areas.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when toggled. @errors Invalid events are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -397,6 +786,19 @@ protected cb func OnNfrPoseLineReleased(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Toggles the native Facial Expression browser without consuming arrow hit areas.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when toggled. @errors Invalid events are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -409,6 +811,19 @@ protected cb func OnNfrExpressionLineReleased(evt: ref<inkPointerEvent>) -> Bool
 }
 
 /** Schedules synchronization after a native Category or Pose arrow completes its own callback.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Native arrow release. @return False so native input remains authoritative.
  * @errors Non-click releases are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -419,6 +834,19 @@ protected cb func OnNfrNativeOptionArrowReleased(evt: ref<inkPointerEvent>) -> B
 }
 
 /** Toggles one initialized browser and schedules the shared outer-scroll range refresh.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @param adapter Target adapter. @param cardCallback Card callback.
  * @return True when toggled. @errors Invalid input returns false. */
 @if(ModuleExists("EquipmentEx"))
@@ -446,6 +874,19 @@ private func ToggleNfrNativeOptionBrowser(
 }
 
 /** Schedules outer-scroll recomputation after Ink publishes the changed fit-to-content height.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors A missing game instance prevents scheduling. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -464,6 +905,19 @@ public func ScheduleNfrExpandableScrollRefresh() -> Void {
 }
 
 /** Captures the absolute viewport offset and initiating header before measured height changes.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param anchor Header that must retain its screen position. @return None.
  * @errors A missing active scroll controller still invalidates older deferred restores. */
 @if(ModuleExists("EquipmentEx"))
@@ -495,6 +949,19 @@ public func BeginNfrExpandableScrollMutation(anchor: wref<inkWidget>) -> Void {
 }
 
 /** Captures the current vertical-list height and the height preceding the initiating header.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param anchor Header whose direct list branch identifies the mutation boundary. @return None.
  * @errors Unrecognized ancestry disables prediction while retaining measured restoration. */
 @if(ModuleExists("EquipmentEx"))
@@ -525,6 +992,19 @@ private func CaptureNfrExpandableLayoutPrediction(anchor: wref<inkWidget>) -> Vo
 }
 
 /** Predicts the new range and anchor offset from NFR's synchronously changed owned widget heights.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing prediction state leaves deferred restoration authoritative. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -569,6 +1049,19 @@ public func ApplyNfrExpandableScrollPrediction() -> Void {
 }
 
 /** Measures visible children of one vertical list using explicit NFR-owned heights and margins.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param root Vertical list. @return Effective visible height. @errors Missing roots return zero. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -584,6 +1077,19 @@ private func MeasureNfrExpandableVerticalChildren(root: wref<inkVerticalPanel>) 
 }
 
 /** Measures visible vertical layout recursively while treating canvas children as overlays.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param widget Widget to measure. @return Height including vertical margins. @errors Hidden widgets return zero. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -601,6 +1107,19 @@ private func MeasureNfrExpandableWidgetHeight(widget: wref<inkWidget>) -> Float 
 }
 
 /** Measures visible siblings preceding the anchor's direct branch in the shared vertical list.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param root Shared vertical list. @param branch Direct child containing the header.
  * @return Height before the branch. @errors Missing branches return the complete measured list. */
 @if(ModuleExists("EquipmentEx"))
@@ -620,6 +1139,19 @@ private func MeasureNfrExpandablePrefix(
 }
 
 /** Applies only the newest deferred expansion restore after Ink layout has settled.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param generation Expansion transaction generation. @return None.
  * @errors Stale callbacks are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -630,6 +1162,19 @@ public func RefreshNfrExpandableScrollRange(generation: Uint32) -> Void {
 }
 
 /** Schedules a next-frame correction and one bounded fallback after the base restore propagates.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing game state skips correction. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -648,6 +1193,19 @@ public func ScheduleNfrExpandableAnchorCorrection() -> Void {
 }
 
 /** Restores the initiating header after the base absolute-offset restore has taken effect.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param generation Expansion transaction generation. @param isFinal Whether to release the anchor.
  * @return None. @errors Missing widgets, zero ranges, and stale callbacks are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -683,6 +1241,19 @@ public func CorrectNfrExpandableScrollAnchor(generation: Uint32, isFinal: Bool) 
 }
 
 /** Selects the outer scroll controller belonging to the active expandable page.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param start Widget within that page. @return None. @errors Missing ancestry preserves the prior context. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -697,6 +1268,19 @@ public func UseNfrExpandableScrollContext(start: wref<inkWidget>) -> Void {
 }
 
 /** Schedules a post-input read after native dependent selector updates have completed.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors A missing game instance prevents scheduling. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -709,6 +1293,19 @@ private func ScheduleNfrNativeOptionStateRefresh() -> Void {
 }
 
 /** Rereads Category and dependent Pose options from their retained native menu items.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing reflected values produce empty card sets safely. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -761,6 +1358,19 @@ public func RefreshNfrNativeOptionState() -> Void {
 }
 
 /** Reapplies native-derived label and disclosure geometry for both retained rows.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing adapters are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -772,6 +1382,19 @@ public func UpdateNfrNativeOptionBrowserLayouts() -> Void {
 }
 
 /** Reapplies one retained row's label geometry after its host changes height.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Target adapter. @return None. @errors Missing widgets are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -781,6 +1404,19 @@ private func UpdateNfrNativeOptionBrowserLayout(adapter: ref<NfrNativeOptionBrow
 }
 
 /** Rebuilds cards from the latest native option array, including Category-dependent Pose changes.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Target adapter. @param cardCallback Card activation callback.
  * @return None. @errors Missing browser state is ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -795,6 +1431,19 @@ private func RebuildNfrNativeOptionCards(
 }
 
 /** Selects one Category through its retained native Photo Mode menu item.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Card release. @return True when selected. @errors Invalid cards return false. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -803,6 +1452,19 @@ protected cb func OnNfrCategoryCardReleased(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Selects one Pose through its retained native Photo Mode menu item.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Card release. @return True when selected. @errors Invalid cards return false. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -811,6 +1473,19 @@ protected cb func OnNfrPoseCardReleased(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Selects one Facial Expression through its retained native Photo Mode menu item.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Card release. @return True when selected. @errors Invalid cards return false. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -819,6 +1494,19 @@ protected cb func OnNfrExpressionCardReleased(evt: ref<inkPointerEvent>) -> Bool
 }
 
 /** Applies a card's exact optionData through `PhotoModeMenuListItem.ForceValue`.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Card release. @param adapter Owning adapter.
  * @return True when selected. @errors Stale bindings return false. */
 @if(ModuleExists("EquipmentEx"))
@@ -851,6 +1539,19 @@ private func SelectNfrNativeOptionCard(
 }
 
 /** Derives initial selection from the retained native selector's displayed label.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Target adapter. @return None. @errors Missing selector text leaves selection unchanged. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -879,6 +1580,19 @@ private func SyncNfrNativeOptionFromLabel(adapter: ref<NfrNativeOptionBrowserAda
 }
 
 /** Applies the existing red/blue card treatment from the adapter's selected option identity.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Target adapter. @return None. @errors Missing card internals are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -923,6 +1637,19 @@ private func UpdateNfrNativeOptionCardVisuals(adapter: ref<NfrNativeOptionBrowse
 }
 
 /** Releases callbacks and adapter references before Photo Mode destroys native rows.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partially initialized adapters are safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)
@@ -948,6 +1675,19 @@ protected cb func OnUninitialize() -> Void {
 }
 
 /** Unregisters one adapter's native and card callbacks and clears its retained widget state.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Target adapter. @param toggleCallback Toggle callback.
  * @param cardCallback Card callback. @return None. @errors Missing adapters are ignored. */
 @if(ModuleExists("EquipmentEx"))

@@ -1,61 +1,273 @@
 module NeonFittingRoom
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.{OutfitPart, OutfitSystem, PaperdollHelper}
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingControl: ref<NfrPhotoModeOwnedExpandableControl>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingSlotContainer: wref<inkVerticalPanel>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingSlots: array<ref<NfrPhotoModeClothingSlotBrowser>>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingCatalogBuilt: Bool;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingCustomPreview: Bool;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingActiveCount: Int32;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingSyncRevision: Int32;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingBaselineOption: PhotoModeOptionSelectorData;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingHasBaselineOption: Bool;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingClearHit: wref<inkWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingClearLabel: wref<inkText>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingResetHit: wref<inkWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingResetLabel: wref<inkText>;
 
-/** Repeats outfit-to-clothing synchronization after Equipment-EX's preview update settles. */
+/**
+ * Repeats outfit-to-clothing synchronization after Equipment-EX's preview update settles.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrClothingOutfitSyncCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -90,6 +302,19 @@ private class NfrClothingOutfitSyncCallback extends DelayCallback {
 
 /** Synchronizes generated clothing selectors after Equipment-EX changes the Photo Mode outfit.
  * The dependency applies the puppet change first; NFR then mirrors the same option into retained UI state.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param attribute Selected Photo Mode attribute. @param option Exact selected option.
  * @return None. @errors Non-Outfit selections retain their native behavior without NFR synchronization. */
 @if(ModuleExists("EquipmentEx"))
@@ -108,6 +333,19 @@ public func OnAttributeOptionSelected(attribute: Uint32, option: PhotoModeOption
 }
 
 /** Applies settled outfit synchronization only when no later manual preview action superseded it.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param option Retained native Outfit option. @param revision Outfit transition revision.
  * @return None. @errors Stale callbacks are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -122,6 +360,19 @@ public func SyncNfrClothingSlotsFromOutfitOptionIfCurrent(
 }
 
 /** Replaces stale manual clothing selections with the parts represented by the selected outfit.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param option Exact Equipment-EX Photo Mode outfit option. @return None.
  * @errors Before the lazy slot catalog exists there is no retained UI state to synchronize. */
 @if(ModuleExists("EquipmentEx"))
@@ -188,6 +439,19 @@ public func SyncNfrClothingSlotsFromOutfitOption(option: PhotoModeOptionSelector
 }
 
 /** Finds a slot item by record identity so preview-instance differences cannot break selection.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param slotBrowser Slot catalog to search. @param itemID Selected outfit item.
  * @return Ordered item index, or minus one when absent. @errors Invalid values return minus one. */
 @if(ModuleExists("EquipmentEx"))
@@ -211,6 +475,19 @@ private func FindNfrClothingItemIndex(
 }
 
 /** Updates the parent Clothing value without coupling it to child card identities.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param activeCount Number of outfit-derived active slot items. @return None.
  * @errors A not-yet-mounted value label is ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -229,6 +506,19 @@ private func UpdateNfrClothingStatus(activeCount: Int32) -> Void {
 }
 
 /** Enables Clothing actions only when they would change the current preview.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing action widgets are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -250,6 +540,19 @@ private func UpdateNfrClothingActionState() -> Void {
 }
 
 /** Creates one text action in an expandable control row's unused title/value region.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param parent Row that owns the action.
  * @param name Stable widget name. @param text Player-visible action label.
  * @param x Horizontal origin. @param callback Release callback.
@@ -289,7 +592,15 @@ private func CreateNfrClothingAction(
   return hit;
 }
 
-/** Defers Clothing insertion until Equipment-EX has finished constructing the Outfit host. */
+/**
+ * Defers Clothing insertion until Equipment-EX has finished constructing the Outfit host.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrClothingAttachCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -314,6 +625,19 @@ private class NfrClothingAttachCallback extends DelayCallback {
 }
 
 /** Inserts the owned Clothing browser between Outfit and the first native selector row.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param reversedUI Host orientation. @return Host callback result.
  * @errors Missing Outfit ownership leaves the Clothing browser absent without moving native rows. */
 @if(ModuleExists("EquipmentEx"))
@@ -330,6 +654,19 @@ protected cb func OnShow(reversedUI: Bool) -> Bool {
 }
 
 /** Starts each Photo Mode session from the native Outfit option and collapsed Clothing UI.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing native Outfit state leaves prior labels untouched
  * until the deferred reconciliation retry. */
 @if(ModuleExists("EquipmentEx"))
@@ -359,6 +696,19 @@ public func ReconcileNfrClothingForPhotoModeShow() -> Void {
 }
 
 /** Creates the top-level content-agnostic Clothing host at Outfit's following list index.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing or detached Outfit hosts are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -437,6 +787,19 @@ public func EnsureNfrClothingBrowser() -> Void {
 }
 
 /** Clears every Equipment-EX-managed item from V's Photo Mode preview puppet.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when Clear was applied.
  * @errors Missing preview services leave the current preview unchanged. */
 @if(ModuleExists("EquipmentEx"))
@@ -481,6 +844,19 @@ protected cb func OnNfrClothingClearReleased(evt: ref<inkPointerEvent>) -> Bool 
 }
 
 /** Restores the retained native Outfit selection after manual Clothing changes.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when Reset was requested.
  * @errors Missing retained Outfit state leaves the current preview unchanged. */
 @if(ModuleExists("EquipmentEx"))
@@ -517,6 +893,19 @@ protected cb func OnNfrClothingResetReleased(evt: ref<inkPointerEvent>) -> Bool 
 }
 
 /** Builds one real selector/card browser per nonempty Equipment-EX Wardrobe slot.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Unavailable catalog services leave the parent browser empty. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -564,6 +953,19 @@ private func BuildNfrClothingSlotBrowsers() -> Void {
 }
 
 /** Counts slot controls whose retained identity currently represents an equipped outfit item.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Active clothing-slot count. @errors An empty catalog returns zero. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -576,6 +978,19 @@ private func CountNfrActiveClothingSlots() -> Int32 {
 }
 
 /** Counts distinct populated slots in a saved Equipment-EX outfit snapshot.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param parts Saved outfit parts. @return Number of unique slots containing valid items.
  * @errors Empty or invalid parts contribute nothing. */
 @if(ModuleExists("EquipmentEx"))
@@ -596,6 +1011,19 @@ private func CountNfrOutfitParts(parts: array<ref<OutfitPart>>) -> Int32 {
 }
 
 /** Counts populated base equipment slots on the current Photo Mode preview puppet.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Number of populated Equipment-EX base slots.
  * @errors Missing preview services return zero. */
 @if(ModuleExists("EquipmentEx"))
@@ -616,6 +1044,19 @@ private func CountNfrPuppetBaseSlotItems() -> Int32 {
 }
 
 /** Returns the vanilla attachment slots Equipment-EX treats as its base clothing slots.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Stable base-slot identities for preview clearing and counting.
  * @errors None; changes to Equipment-EX's base-slot policy require compatibility validation. */
 @if(ModuleExists("EquipmentEx"))
@@ -634,6 +1075,19 @@ private func GetNfrBaseClothingSlots() -> array<TweakDBID> {
 }
 
 /** Toggles the Clothing child-control container and refreshes Photo Mode's outer scroll range.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when toggled. @errors Invalid events are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -656,6 +1110,19 @@ protected cb func OnNfrClothingLineReleased(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Toggles the slot browser whose title or active-item label received the click.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when a slot was toggled. @errors Unknown targets are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -696,6 +1163,19 @@ protected cb func OnNfrClothingSlotLineReleased(evt: ref<inkPointerEvent>) -> Bo
 }
 
 /** Collapses clothing-slot browsers other than the slot about to open.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param exceptBrowser Slot browser that remains eligible to expand. @return None.
  * @errors Missing slot controls are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -719,6 +1199,19 @@ private func CollapseNfrClothingSlotExpandablePeers(
 }
 
 /** Selects the previous item in a clothing slot, wrapping at the start.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when selection changed. @errors Unknown targets are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -727,6 +1220,19 @@ protected cb func OnNfrClothingSlotPreviousReleased(evt: ref<inkPointerEvent>) -
 }
 
 /** Selects the next item in a clothing slot, wrapping at the end.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @return True when selection changed. @errors Unknown targets are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -735,6 +1241,19 @@ protected cb func OnNfrClothingSlotNextReleased(evt: ref<inkPointerEvent>) -> Bo
 }
 
 /** Resolves an arrow target and cycles its slot's ordered Wardrobe items.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Pointer release. @param delta Minus one for previous or one for next.
  * @return True when an item was applied. @errors Missing puppets or empty slots are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -764,6 +1283,19 @@ private func CycleNfrClothingSlot(evt: ref<inkPointerEvent>, delta: Int32) -> Bo
 }
 
 /** Resolves names and ordered UI identities only when a slot is first used.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param slotBrowser Lightweight slot catalog to materialize. @return True when its model is ready.
  * @errors Missing Equipment-EX state leaves the slot unloaded and safely retryable. */
 @if(ModuleExists("EquipmentEx"))
@@ -839,6 +1371,19 @@ public func EnsureNfrClothingSlotItemsLoaded(
 }
 
 /** Applies the card selected in one generated clothing-slot browser.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Card release. @return True when an item was applied. @errors Stale cards are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -858,6 +1403,19 @@ protected cb func OnNfrClothingSlotCardReleased(evt: ref<inkPointerEvent>) -> Bo
 }
 
 /** Applies one authoritative slot transition for card and arrow input.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param slotBrowser Owning slot selector. @param index Ordered target identity.
  * @param toggleActive Whether selecting the active item should clear it.
  * @return True when the preview changed. @errors Invalid state leaves the preview unchanged. */
@@ -900,6 +1458,19 @@ private func ApplyNfrClothingSlotSelection(
 }
 
 /** Applies the standard red/blue card treatment for one clothing slot's active identity.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param slotBrowser Slot presenter to refresh. @return None. @errors Missing card internals are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -938,6 +1509,19 @@ private func UpdateNfrClothingSlotCardVisuals(
 }
 
 /** Releases the owned Clothing host before the native Photo Mode tree is destroyed.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)

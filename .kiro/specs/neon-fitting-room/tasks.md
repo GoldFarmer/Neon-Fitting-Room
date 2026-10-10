@@ -152,6 +152,18 @@ decisions, not as actionable backlog items.
   required dependencies.
 - [x] Produce the validated release archive and publication-ready listing materials without
   publishing them, including the experimental NPC-clothing and body-clipping limitations.
+- [x] Standardize provider, adoption-version, and minimum-version metadata on every REDscript method
+  interception and class injection, enumerate every provider's consumed API/type/data surfaces in
+  implementation docstrings, and generate all dependency-facing release documentation from that
+  source with drift validation.
+- [x] Remove the synthetic compiled dependency-contract classes, colocate provider declarations with
+  real integrations, aggregate effective versions from usage annotations, and regenerate dependency
+  artifacts during development installation and release packaging.
+- [x] Separate provider identity into `@dependencyProvider`, require multiline `@dependencies`
+  objects, and give every interception and class injection an immediate local dependency contract.
+- [x] Centralize provider declarations in `integration/NfrDependencies.reds`, document every
+  `ModuleExists` guard with its provider dependency, reject blank-line-separated associations, and
+  enforce exactly one visual separator before every implementation docstring.
 
 ## Deferred scope
 

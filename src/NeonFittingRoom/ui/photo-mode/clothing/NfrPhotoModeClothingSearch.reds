@@ -2,10 +2,27 @@ module NeonFittingRoom
 
 import Codeware.UI.*
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.OutfitSystem
 
-/** Owns one parent-level Clothing query across its generated slot controls. */
+/**
+ * Owns one parent-level Clothing query across its generated slot controls.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 public class NfrPhotoModeClothingSearchBinding extends IScriptable {
   public let controlID: CName;
@@ -16,15 +33,53 @@ public class NfrPhotoModeClothingSearchBinding extends IScriptable {
   public let generation: Int32;
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingSearchBindings: array<ref<NfrPhotoModeClothingSearchBinding>>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrClothingSearchFocusReleaseRegistered: Bool;
 
-/** Applies only the newest delayed Clothing query. */
+/**
+ * Applies only the newest delayed Clothing query.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrClothingSearchDebounceCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -57,6 +112,19 @@ private class NfrClothingSearchDebounceCallback extends DelayCallback {
 }
 
 /** Mounts or refreshes one search directly below a parent Clothing row.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param controlID Stable parent identity. @param container Parent's expanded child container.
  * @param slots Current slot controls. @param rowRoot Scroll anchoring row.
  * @return None. @errors Missing containers leave search unavailable. */
@@ -119,7 +187,20 @@ public func EnsureNfrClothingGroupSearch(
   }
 }
 
-/** Finds one parent Clothing search. @param controlID Stable identity.
+/** Finds one parent Clothing search.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param controlID Stable identity.
  * @return Matching binding or null. @errors None. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -132,7 +213,20 @@ private func FindNfrClothingSearch(
   return null;
 }
 
-/** Debounces input from either V or NPC Clothing search. @param widget Input root.
+/** Debounces input from either V or NPC Clothing search.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param widget Input root.
  * @return True for a known input. @errors Unknown inputs are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -156,7 +250,20 @@ protected cb func OnNfrClothingSearchInput(widget: wref<inkWidget>) -> Bool {
   return false;
 }
 
-/** Applies a query generation when still current. @param controlID Parent identity.
+/** Applies a query generation when still current.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param controlID Parent identity.
  * @param generation Query generation. @return None. @errors Stale requests are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -171,6 +278,19 @@ public func ApplyNfrClothingSearchGeneration(controlID: CName, generation: Int32
 }
 
 /** Filters every slot catalog owned by one Clothing parent.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param binding Parent search state. @param query Display-name fragment.
  * @return None. @errors Unavailable slot catalogs remain visible and retryable. */
 @if(ModuleExists("EquipmentEx"))
@@ -251,6 +371,19 @@ private func ApplyNfrClothingGroupSearch(
 }
 
 /** Reapplies global grid density to retained V and NPC Clothing card surfaces.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Unbuilt lazy slot surfaces are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -272,6 +405,19 @@ public func RefreshNfrClothingGridSettings() -> Void {
 }
 
 /** Reapplies a parent query after a lazy slot card surface is created.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param browser Newly rendered slot browser. @return None. @errors Unknown browsers are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -300,7 +446,20 @@ public func RefreshNfrClothingGroupSearchForBrowser(
   }
 }
 
-/** Clears one parent query when Clothing collapses. @param controlID Parent identity.
+/** Clears one parent query when Clothing collapses.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param controlID Parent identity.
  * @return None. @errors Missing bindings are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -314,6 +473,19 @@ public func ResetNfrClothingGroupSearch(controlID: CName) -> Void {
 }
 
 /** Removes one parent Clothing search when its generated child hierarchy is released.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param controlID Parent identity. @return None. @errors Missing bindings are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -347,6 +519,19 @@ public func ReleaseNfrClothingGroupSearch(controlID: CName) -> Void {
 }
 
 /** Releases search focus after a click outside both Clothing inputs.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Global release. @return False so normal input continues. @errors None. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -365,7 +550,23 @@ protected cb func OnNfrClothingSearchGlobalRelease(evt: ref<inkPointerEvent>) ->
   return false;
 }
 
-/** Returns keyboard ownership to Photo Mode. @param None. @return None. @errors None. */
+/**
+ * Returns keyboard ownership to Photo Mode.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param None. @return None. @errors None.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 private func ReleaseNfrClothingSearchFocus() -> Void {
@@ -378,6 +579,19 @@ private func ReleaseNfrClothingSearchFocus() -> Void {
 }
 
 /** Releases parent Clothing search controls with Photo Mode.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)

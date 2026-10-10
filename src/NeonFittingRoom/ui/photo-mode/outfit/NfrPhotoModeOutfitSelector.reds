@@ -1,9 +1,31 @@
 module NeonFittingRoom
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.{OutfitSystem}
 
 /** Returns the exact option currently selected by a native Photo Mode list item.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Current option, or a zero value when the selector is unavailable.
  * @errors Invalid selector state returns the zero value without changing selection. */
 @if(ModuleExists("EquipmentEx"))
@@ -19,6 +41,19 @@ public func GetNfrCurrentOption() -> PhotoModeOptionSelectorData {
 
 /**
  * Preserves native wheel scrolling without re-centering the selected Photo Mode row.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param e Released pointer event. @param gameCtrl Optional input owner. @return None. @errors None.
  */
 @if(ModuleExists("EquipmentEx"))
@@ -38,28 +73,116 @@ public func HandleInputWithVisibilityCheck(
   }
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitLine: wref<inkWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitBrowser: ref<NfrExpandableCardBrowser>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitOwnedControl: ref<NfrPhotoModeOwnedExpandableControl>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitNativeMenuItem: wref<PhotoModeMenuListItem>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitNativeStateHolder: wref<inkCanvas>;
 
 /**
  * Returns the reusable Outfit browser host for diagnostics and outer-scroll integration.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return The host widget or null before initialization. @errors None.
  */
 @if(ModuleExists("EquipmentEx"))
@@ -70,6 +193,19 @@ public func GetNfrOutfitBrowserHost() -> wref<inkWidget> {
 }
 
 /** Returns Outfit's settled native row for owned-control style derivation.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Native row or null before binding. @errors None. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -78,6 +214,19 @@ public func GetNfrOutfitReferenceRow() -> wref<inkCompoundWidget> {
 }
 
 /** Returns Outfit's disclosure image for owned-control geometry derivation.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Disclosure image or null before binding. @errors None. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -86,19 +235,77 @@ public func GetNfrOutfitReferenceDisclosure() -> wref<inkImage> {
   return null;
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitRowRoot: wref<inkCompoundWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitCardOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitSelectedOptionData: Int32;
 
 /** Returns the retained native Outfit option represented by the current NFR selection.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return Matching option, or a zero-data value before options are available.
  * @errors Missing card options return the default value without changing native state. */
 @if(ModuleExists("EquipmentEx"))
@@ -120,11 +327,34 @@ public func GetNfrSelectedOutfitOption() -> PhotoModeOptionSelectorData {
   return result;
 }
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrOutfitOuterScroll: wref<inkScrollController>;
 
-/** Reapplies native-derived header geometry after the fit-to-content host completes layout. */
+/**
+ * Reapplies native-derived header geometry after the fit-to-content host completes layout.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrOutfitHeaderLayoutRefreshCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -154,6 +384,19 @@ private class NfrOutfitHeaderLayoutRefreshCallback extends DelayCallback {
 /**
  * Adds NFR's click listener to Equipment-EX's existing Outfit control line without changing its
  * visual selector, arrows, or selected-outfit label.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param reversedUI The host Photo Mode orientation flag.
  * @return The inherited callback result.
  * @errors Missing native widgets retain Equipment-EX's unmodified control.
@@ -247,6 +490,19 @@ protected cb func OnShow(reversedUI: Bool) -> Bool {
 }
 
 /** Starts each Photo Mode session from Equipment-EX's newly initialized native Outfit option.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing native or owned widgets leave the prior presentation
  * intact until the scheduled settled retry. */
 @if(ModuleExists("EquipmentEx"))
@@ -275,6 +531,19 @@ public func ReconcileNfrOutfitForPhotoModeShow() -> Void {
 }
 
 /** Initializes the owned Outfit value before its lazy card catalog has been materialized.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors An unavailable native selector leaves the value blank. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -291,6 +560,19 @@ private func SyncNfrOutfitOwnedValueFromNativeOption() -> Void {
 
 /**
  * Toggles NFR's future outfit-card browser from the existing Outfit control line.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt The pointer release received by the native Outfit control.
  * @return True only for NFR's handled click action.
  * @errors Non-click input is ignored and leaves Equipment-EX behavior unchanged.
@@ -323,6 +605,19 @@ protected cb func OnNfrOutfitLineReleased(evt: ref<inkPointerEvent>) -> Bool {
 
 /**
  * Mirrors Equipment-EX's native arrow-selected Outfit option onto NFR's card accent.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors A changed native selector layout safely leaves the card accent unchanged.
@@ -360,6 +655,19 @@ private func SyncNfrOutfitCardSelectionFromNativeOption() -> Void {
 
 /**
  * Identifies a click originating from Equipment-EX's native Outfit selector arrows.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target The Ink widget that originally received the pointer event.
  * @return True when the event belongs to either arrow subtree.
  * @errors An unavailable native selector is treated as a non-arrow target.
@@ -390,6 +698,19 @@ private func IsNfrOutfitArrowTarget(target: wref<inkWidget>) -> Bool {
 
 /**
  * Selects one visible NFR outfit card through Equipment-EX's retained Photo Mode option route.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt The pointer release received by an NFR-owned outfit card.
  * @return True only when an NFR card option was selected.
  * @errors Missing or stale card bindings leave Equipment-EX's existing selector unchanged.
@@ -423,6 +744,19 @@ protected cb func OnNfrOutfitCardReleased(evt: ref<inkPointerEvent>) -> Bool {
 
 /**
  * Selects the previous Outfit through the same Equipment-EX route used by card releases.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt The bounded expanded-header release event.
  * @return True when the click action was handled.
  * @errors Missing option data leaves the current Outfit unchanged.
@@ -436,6 +770,19 @@ protected cb func OnNfrOutfitExpandedLeftReleased(evt: ref<inkPointerEvent>) -> 
 
 /**
  * Selects the next Outfit through the same Equipment-EX route used by card releases.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt The bounded expanded-header release event.
  * @return True when the click action was handled.
  * @errors Missing option data leaves the current Outfit unchanged.
@@ -449,6 +796,19 @@ protected cb func OnNfrOutfitExpandedRightReleased(evt: ref<inkPointerEvent>) ->
 
 /**
  * Applies an adjacent retained Outfit option, wrapping at either end of the list.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param direction Negative for previous and positive for next.
  * @return True when Equipment-EX received a selection.
  * @errors Empty option data or a missing menu item returns false without changing equipment.
@@ -487,6 +847,19 @@ private func SelectAdjacentNfrOutfit(direction: Int32) -> Bool {
 
 /**
  * Mirrors the retained selected Outfit name onto the fixed expanded header.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors Missing label or unmatched option data leaves the previous text unchanged.
@@ -514,6 +887,19 @@ private func UpdateNfrOutfitExpandedOptionLabel() -> Void {
 
 /**
  * Gives the selected NFR card the Wardrobe-style blue accent without changing the native selector.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors Missing card internals simply leave that card in its normal appearance.
@@ -573,6 +959,19 @@ private func UpdateNfrOutfitCardSelectionVisuals() -> Void {
 
 /**
  * Shows the owning card's explicit red hover background without native grid-button state.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt The hover event whose current target is an NFR-owned card root.
  * @return True when a matching card background was shown.
  * @errors Stale and unrelated targets are ignored.
@@ -600,6 +999,19 @@ protected cb func OnNfrOutfitCardHoverOver(evt: ref<inkPointerEvent>) -> Bool {
 
 /**
  * Restores explicit selected/unselected visuals after the pointer leaves an outfit card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt The hover-out event; its payload is not otherwise required.
  * @return True after card selection visuals are restored.
  * @errors An empty card collection is safe.
@@ -613,6 +1025,19 @@ protected cb func OnNfrOutfitCardHoverOut(evt: ref<inkPointerEvent>) -> Bool {
 
 /**
  * Reflects the Outfit card browser's current open state in its disclosure indicator.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors A missing indicator is safe while the native row is rebuilding.
@@ -627,6 +1052,19 @@ private func UpdateNfrOutfitExpandIndicator() -> Void {
 
 /**
  * Shows or hides the complete Equipment-EX outfit-card selector in the Outfit row.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors Missing row widgets leave the control line usable and only omit the card surface.
@@ -719,6 +1157,19 @@ private func UpdateNfrOutfitBrowserSurface() -> Void {
 
 /**
  * Recomputes the native Photo Mode scroll range after the outfit host's layout has settled.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors A missing outer scroll controller leaves native scrolling unchanged.
@@ -763,6 +1214,19 @@ public func RefreshNfrOutfitOuterScrollRange() -> Void {
 
 /**
  * Creates one compiled Photo Mode card and binds it to a retained Equipment-EX selector choice.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param panel The NFR-owned card content panel.
  * @param option The exact Equipment-EX option data to select when the card is clicked.
  * @param parts Saved-outfit parts represented by the adaptive icon mosaic; empty for utility cards.
@@ -840,6 +1304,19 @@ private func CreateNfrOutfitCard(
 }
 
 /** Applies the committed outfit-icon setting to one retained card and its text layout.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param cardRoot Compiled outfit-card root. @return None. @errors Missing optional visuals are
  * treated as a text-only outfit. */
 @if(ModuleExists("EquipmentEx"))
@@ -879,6 +1356,19 @@ private func ApplyNfrOutfitCardIconSetting(cardRoot: wref<inkCompoundWidget>) ->
 }
 
 /** Refreshes outfit icon visibility for retained cards after settings or Photo Mode lifecycle changes.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing browser cards are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -894,6 +1384,19 @@ private func ApplyNfrOutfitIconSetting() -> Void {
 }
 
 /** Captures the currently equipped Equipment-EX outfit-slot items for the utility-card mosaic.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param outfitSystem Active Equipment-EX authority. @return Valid populated slot snapshots.
  * @errors Missing systems and empty slots are omitted. */
 @if(ModuleExists("EquipmentEx"))
@@ -906,6 +1409,19 @@ private func BuildNfrCurrentEquippedOutfitParts(
 }
 
 /** Draws a clear-state cross for the No Outfit utility card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param cardRoot Compiled card root. @return None. @errors Missing roots are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -938,6 +1454,19 @@ private func BuildNfrNoOutfitCardIcon(cardRoot: wref<inkCompoundWidget>) -> Void
 }
 
 /** Selects populated silhouette-defining outfit parts for a recognizable card collage.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param parts Immutable session outfit parts. @return Head, Torso, Back, Waist, Legs, and Feet
  * parts, including every populated sub-slot in those Equipment-EX regions. @errors Invalid parts and
  * non-significant accessory regions are omitted. */
@@ -956,6 +1485,19 @@ private func GetNfrSignificantOutfitParts(
 }
 
 /** Reports whether an Equipment-EX slot materially defines the outfit silhouette.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param slotID Equipment-EX outfit slot. @return True for selected major body regions.
  * @errors Unknown and invalid slots return false. */
 @if(ModuleExists("EquipmentEx"))
@@ -984,6 +1526,19 @@ private func IsNfrSignificantOutfitSlot(slotID: TweakDBID) -> Bool {
 
 /** Builds a significant-parts adaptive inventory-icon mosaic above a saved outfit's label.
  * The grid expands its row/column count instead of replacing included parts with a `+N` summary.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param cardRoot Compiled card root. @param parts Immutable session outfit parts.
  * @return None. @errors Missing item/icon records retain a visible placeholder cell. */
 @if(ModuleExists("EquipmentEx"))
@@ -1065,6 +1620,19 @@ private func BuildNfrOutfitCardIconMosaic(
 }
 
 /** Chooses a compact near-square grid that retains every outfit part.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param count Constituent part count. @return Column count. @errors Non-positive counts use one. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -1079,6 +1647,19 @@ private func GetNfrOutfitMosaicColumns(count: Int32) -> Int32 {
 
 /**
  * Releases NFR's listener before Photo Mode destroys the native widget tree.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None.
  * @return None.
  * @errors A missing line is safe during teardown.

@@ -1,41 +1,191 @@
 module NeonFittingRoom
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcAppearanceAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcExpressionAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcCategoryAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcPoseAdapter: ref<NfrNativeOptionBrowserAdapter>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcAppearanceOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcExpressionOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcCategoryOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcPoseOptions: array<PhotoModeOptionSelectorData>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcBrowserGeneration: Int32;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrNpcInitialMountPending: Bool;
@@ -44,6 +194,19 @@ private let m_nfrNpcInitialMountPending: Bool;
  * Photo Mode can hide and show this controller without calling `OnUninitialize`, so the prior
  * session's adapters, expanded panels, searches, and puppet references cannot be retained until
  * a fresh NPC selector becomes active.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partially initialized surfaces are safe. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -54,7 +217,15 @@ public func ResetNfrNpcControlsForPhotoModeShow() -> Void {
   this.ResetNfrNpcClothingForPhotoModeShow();
 }
 
-/** Defers NPC adapter rebuilding until native per-puppet option lists have settled. */
+/**
+ * Defers NPC adapter rebuilding until native per-puppet option lists have settled.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 private class NfrNpcOptionBrowserRefreshCallback extends DelayCallback {
   private let m_controller: wref<gameuiPhotoModeMenuController>;
@@ -92,6 +263,19 @@ private class NfrNpcOptionBrowserRefreshCallback extends DelayCallback {
 }
 
 /** Tracks native NPC selection changes independently for each selected puppet slot.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param attribute Changed native attribute. @param option Exact selected option.
  * @return None. @errors Unsupported attributes retain native behavior. */
 @if(ModuleExists("EquipmentEx"))
@@ -122,6 +306,19 @@ public func OnAttributeOptionSelected(attribute: Uint32, option: PhotoModeOption
 
 /** Mounts the NPC browsers after grid selection enables the populated character selector.
  * Grid selection does not call `OnAttributeOptionSelected`, while native NPC arrow cycling does.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param attribute Enabled native attribute. @param enabled Requested state.
  * @return Host result. @errors V's character selector and duplicate requests are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -153,6 +350,19 @@ protected cb func OnSetAttributeOptionEnabled(attribute: Uint32, enabled: Bool) 
 }
 
 /** Schedules a per-NPC reread after native dependent selectors update.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param remount Whether to replace bindings after a character switch. @return None.
  * @errors A missing game instance prevents scheduling. */
 @if(ModuleExists("EquipmentEx"))
@@ -180,6 +390,19 @@ private func ScheduleNfrNpcOptionBrowserRefresh(remount: Bool) -> Void {
 }
 
 /** Rebinds or refreshes the four selectors belonging to the active NPC.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param generation Character-switch generation. @param remount Whether to replace native bindings.
  * @param replayClothingAfterSettle Whether to replay retained clothing after native activation.
  * @return None. @errors Missing native rows are skipped without changing Photo Mode. */
@@ -231,6 +454,19 @@ public func RefreshNfrNpcOptionBrowsers(
 }
 
 /** Distinguishes NPC selection from V's attribute-68 selector before mounting NPC-only rows.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return True when the first retained character is not V. @errors Missing rows return false. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -240,6 +476,19 @@ private func HasNfrActiveNpcSelector() -> Bool {
 }
 
 /** Creates or refreshes one active-NPC selector adapter.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Existing adapter. @param attribute Native key. @param controlID Stable identity.
  * @param options Current options. @param hostName Host name. @param disclosureName Arrow name.
  * @param toggleCallback Toggle callback. @param cardCallback Card callback.
@@ -274,28 +523,92 @@ private func EnsureNfrNpcOptionBrowser(
   return adapter;
 }
 
-/** Toggles NPC Appearance. @param evt Release. @return Whether handled. @errors Invalid events are ignored. */
+/**
+ * Toggles NPC Appearance.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether handled. @errors Invalid events are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcAppearanceLineReleased(evt: ref<inkPointerEvent>) -> Bool {
   return this.ToggleNfrNpcOptionBrowser(evt, this.m_nfrNpcAppearanceAdapter, n"OnNfrNpcAppearanceCardReleased");
 }
 
-/** Toggles NPC Expression. @param evt Release. @return Whether handled. @errors Invalid events are ignored. */
+/**
+ * Toggles NPC Expression.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether handled. @errors Invalid events are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcExpressionLineReleased(evt: ref<inkPointerEvent>) -> Bool {
   return this.ToggleNfrNpcOptionBrowser(evt, this.m_nfrNpcExpressionAdapter, n"OnNfrNpcExpressionCardReleased");
 }
 
-/** Toggles NPC Category. @param evt Release. @return Whether handled. @errors Invalid events are ignored. */
+/**
+ * Toggles NPC Category.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether handled. @errors Invalid events are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcCategoryLineReleased(evt: ref<inkPointerEvent>) -> Bool {
   return this.ToggleNfrNpcOptionBrowser(evt, this.m_nfrNpcCategoryAdapter, n"OnNfrNpcCategoryCardReleased");
 }
 
-/** Toggles NPC Pose. @param evt Release. @return Whether handled. @errors Invalid events are ignored. */
+/**
+ * Toggles NPC Pose.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether handled. @errors Invalid events are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcPoseLineReleased(evt: ref<inkPointerEvent>) -> Bool {
@@ -303,6 +616,19 @@ protected cb func OnNfrNpcPoseLineReleased(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Toggles one NPC browser and collapses its same-depth NPC peers.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Release. @param adapter Target. @param cardCallback Card callback.
  * @return Whether handled. @errors Invalid input returns false. */
 @if(ModuleExists("EquipmentEx"))
@@ -327,7 +653,20 @@ private func ToggleNfrNpcOptionBrowser(
   return true;
 }
 
-/** Collapses other active-NPC browsers. @param exceptID Browser remaining open.
+/** Collapses other active-NPC browsers.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param exceptID Browser remaining open.
  * @return None. @errors Missing adapters are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -338,7 +677,23 @@ private func CollapseNfrNpcOptionBrowserPeers(exceptID: CName) -> Void {
   this.CollapseNfrNativeTopLevelPeer(this.m_nfrNpcPoseAdapter, exceptID);
 }
 
-/** Selects NPC Appearance. @param evt Release. @return Whether selected. @errors Invalid cards are ignored. */
+/**
+ * Selects NPC Appearance.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether selected. @errors Invalid cards are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcAppearanceCardReleased(evt: ref<inkPointerEvent>) -> Bool {
@@ -349,28 +704,92 @@ protected cb func OnNfrNpcAppearanceCardReleased(evt: ref<inkPointerEvent>) -> B
   return selected;
 }
 
-/** Selects NPC Expression. @param evt Release. @return Whether selected. @errors Invalid cards are ignored. */
+/**
+ * Selects NPC Expression.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether selected. @errors Invalid cards are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcExpressionCardReleased(evt: ref<inkPointerEvent>) -> Bool {
   return this.SelectNfrNativeOptionCard(evt, this.m_nfrNpcExpressionAdapter);
 }
 
-/** Selects NPC Category. @param evt Release. @return Whether selected. @errors Invalid cards are ignored. */
+/**
+ * Selects NPC Category.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether selected. @errors Invalid cards are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcCategoryCardReleased(evt: ref<inkPointerEvent>) -> Bool {
   return this.SelectNfrNativeOptionCard(evt, this.m_nfrNpcCategoryAdapter);
 }
 
-/** Selects NPC Pose. @param evt Release. @return Whether selected. @errors Invalid cards are ignored. */
+/**
+ * Selects NPC Pose.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param evt Release. @return Whether selected. @errors Invalid cards are ignored.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 protected cb func OnNfrNpcPoseCardReleased(evt: ref<inkPointerEvent>) -> Bool {
   return this.SelectNfrNativeOptionCard(evt, this.m_nfrNpcPoseAdapter);
 }
 
-/** Reapplies active-NPC native geometry. @param None. @return None. @errors Missing adapters are skipped. */
+/**
+ * Reapplies active-NPC native geometry.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param None. @return None. @errors Missing adapters are skipped.
+ */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
 public func UpdateNfrNpcOptionBrowserLayouts() -> Void {
@@ -380,7 +799,20 @@ public func UpdateNfrNpcOptionBrowserLayouts() -> Void {
   this.UpdateNfrNativeOptionBrowserLayout(this.m_nfrNpcPoseAdapter);
 }
 
-/** Releases bindings owned by the prior active NPC. @param None. @return None.
+/** Releases bindings owned by the prior active NPC.
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
+ * @param None. @return None.
  * @errors Partially initialized adapters are safe. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -416,6 +848,19 @@ private func ReleaseNfrNpcOptionBrowsers() -> Void {
 }
 
 /** Tears down active-NPC bindings before native rows are destroyed.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)

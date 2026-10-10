@@ -2,26 +2,108 @@ module NeonFittingRoom
 
 import Codeware.UI.ScreenHelper
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.{OutfitPart, OutfitSystem}
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCardTooltipSurface: wref<inkCanvas>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCardTooltipTitle: wref<inkText>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCardTooltipDescription: wref<inkText>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrCardTooltipPointerPosition: Vector2;
 
 /** Registers the shared tooltip lifecycle on a materialized NFR card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param card Card root. @return None. @errors Missing cards are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -32,6 +114,19 @@ public func RegisterNfrCardTooltipCallbacks(card: wref<inkWidget>) -> Void {
 }
 
 /** Removes the shared tooltip lifecycle from a released NFR card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param card Card root. @return None. @errors Missing cards are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -42,6 +137,19 @@ public func UnregisterNfrCardTooltipCallbacks(card: wref<inkWidget>) -> Void {
 }
 
 /** Resolves tooltip content from the authoritative model that owns the hovered card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Hover event. @return True when a supported tooltip is shown.
  * @errors Stale and unsupported card targets are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -64,6 +172,19 @@ protected cb func OnNfrCardTooltipHoverOver(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Hides the active NFR tooltip after its card loses hover.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Hover-out event. @return True. @errors Missing surfaces are ignored. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -73,6 +194,19 @@ protected cb func OnNfrCardTooltipHoverOut(evt: ref<inkPointerEvent>) -> Bool {
 }
 
 /** Shows a saved-outfit tooltip containing every constituent item name.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Hovered card. @return True when target belongs to Outfit.
  * @errors Utility or unavailable outfits show the localized empty-state label. */
 @if(ModuleExists("EquipmentEx"))
@@ -97,6 +231,19 @@ private func ShowNfrOutfitCardTooltip(target: wref<inkWidget>) -> Bool {
 }
 
 /** Builds newline-separated constituent names for an Equipment-EX Outfit option.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param option Exact native option identity. @return Included item names.
  * @errors Missing systems and No Outfit return an empty string. */
 @if(ModuleExists("EquipmentEx"))
@@ -124,6 +271,19 @@ private func BuildNfrOutfitTooltipDescription(option: PhotoModeOptionSelectorDat
 }
 
 /** Shows the full localized label for a native-option card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Hovered card. @param adapter Candidate native adapter.
  * @return True when target belongs to adapter. @errors Stale adapters are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -146,6 +306,19 @@ private func ShowNfrNativeOptionCardTooltip(
 }
 
 /** Shows item details for a V or NPC clothing card.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Hovered card. @param slots Candidate slot browsers.
  * @return True when target belongs to a slot. @errors Unresolved inventory data falls back to label. */
 @if(ModuleExists("EquipmentEx"))
@@ -174,6 +347,19 @@ private func ShowNfrClothingCardTooltip(
 }
 
 /** Builds safe standard inventory presentation for an exact clothing identity.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Hovered card. @param itemID Complete item identity.
  * @return True when item data was available. @errors Wardrobe-only identities use caller fallback. */
 @if(ModuleExists("EquipmentEx"))
@@ -203,6 +389,19 @@ private func ShowNfrInventoryItemTooltip(target: wref<inkWidget>, itemID: ItemID
 /** Shows the shared game-styled tooltip beside the pointer.
  * The measured root-to-screen ratio converts configured display coordinates into Ink coordinates
  * without hardcoding the multiplier introduced by driver-level render upscaling.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param target Hovered card. @param title Primary text. @param description Optional wrapped body.
  * @return True when shown. @errors Missing roots or empty titles return false. */
 @if(ModuleExists("EquipmentEx"))
@@ -295,6 +494,19 @@ private func ShowNfrOwnedCardTooltip(
 }
 
 /** Estimates wrapped visual lines for the configured tooltip width.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param value Multiline body. @return Estimated line count. @errors Empty input returns zero. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -316,6 +528,19 @@ private func EstimateNfrTooltipVisualLines(value: String) -> Int32 {
 }
 
 /** Creates the shared tooltip surface with the base game's shaped tooltip atlas.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param root Photo Mode root. @return Whether creation succeeded. @errors Missing roots are safe. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -348,6 +573,19 @@ private func EnsureNfrOwnedCardTooltip(root: wref<inkCompoundWidget>) -> Bool {
 
 /** Recreates text with content assigned before it enters the notification-layer window tree.
  * Runtime verification showed that post-mount `SetText` left these owned widgets empty.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param title Primary text. @param description Optional body. @param scale Layer layout scale.
  * @param surfaceHeight Final tooltip height. @return None. @errors Missing surfaces are ignored. */
 @if(ModuleExists("EquipmentEx"))
@@ -399,6 +637,19 @@ private func RebuildNfrTooltipText(
 }
 
 /** Creates one fill-anchored piece of the vanilla tooltip frame.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param name Widget name. @param part Atlas part. @return Configured image. @errors None. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -415,6 +666,19 @@ private func CreateNfrTooltipAtlasPart(name: CName, part: CName) -> ref<inkImage
 }
 
 /** Creates one wrapped tooltip text widget.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param name Widget name. @param fontSize Font size. @param x Left offset.
  * @param y Top offset. @param width Bounds width. @param height Bounds height.
  * @return Configured text. @errors None. */
@@ -443,6 +707,19 @@ private func CreateNfrTooltipText(
 }
 
 /** Appends a non-empty line to a tooltip body.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param value Existing body. @param line New line. @return Joined body. @errors Empty lines are skipped. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -452,6 +729,19 @@ private func AppendNfrTooltipLine(value: String, line: String) -> String {
 }
 
 /** Releases the owned tooltip before host teardown.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing surfaces are safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)

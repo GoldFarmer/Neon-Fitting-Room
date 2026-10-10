@@ -1,5 +1,14 @@
 module NeonFittingRoom
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.{OutfitPart, OutfitSystem}
 
@@ -33,9 +42,16 @@ public class NfrOutfitSnapshot extends IScriptable {
  *
  * The catalog is intentionally stateless: the future Photo Mode session owns the returned snapshot
  * for its entire lifetime and does not observe Equipment-EX mutations until the next session.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
  */
 @if(ModuleExists("EquipmentEx"))
 public abstract class NfrOutfitCatalog {
+
   /**
    * Reports whether the Equipment-EX outfit authority is available for the active game instance.
    * @param None.
@@ -126,9 +142,16 @@ public abstract class NfrOutfitCatalog {
  *
  * No Equipment-EX symbols occur in this compiled branch, allowing NFR to keep its disabled UI path
  * loadable long enough to report the missing required dependency.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
  */
 @if(!ModuleExists("EquipmentEx"))
 public abstract class NfrOutfitCatalog {
+
   /**
    * Reports that Equipment-EX is unavailable in this compiled configuration.
    * @param None.

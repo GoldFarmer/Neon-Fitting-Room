@@ -405,6 +405,42 @@ card panels, search queries, retained preview targets, and per-NPC Clothing stat
 active NPC is allowed to rebuild those surfaces. This reset SHALL NOT depend on controller
 `OnUninitialize`, because the game may reuse the controller and Ink tree across Photo Mode sessions.
 
+4.14. Every REDscript `@wrapMethod`, `@replaceMethod`, `@addMethod`, or `@addField` integration SHALL
+carry one structured machine-readable `@dependencies` docstring annotation identifying its provider, provider version
+at which NFR adopted the integration, and the minimum provider version known to expose that target. The
+exact target SHALL be derived from the REDscript annotation and function signature. An unknown
+minimum SHALL be recorded explicitly as `TBD`, never inferred from the development baseline,
+an upstream mod's current requirement, or a successfully tested version. A concrete minimum SHALL
+be recorded only when versioned evidence identifies the release that first introduced the consumed
+contract. Every
+annotation and each of its fields SHALL use the standard multiline docstring form; compact one-line
+dependency objects are invalid.
+
+4.15. Direct, optional, and transitive runtime providers SHALL each have one `@dependencyProvider`
+declaration in `integration/NfrDependencies.reds`. Provider declarations
+SHALL contain provider identity, relationship, publication, module, surface, and role metadata but
+SHALL NOT duplicate adoption or minimum versions. One deterministic generator SHALL aggregate versions from actual
+`@dependencies` usage annotations into the dependency matrix, README runtime requirements, Nexus
+requirements, and release manifest. Generated artifacts SHALL NOT maintain independent dependency
+versions, and development installation and release packaging SHALL regenerate them before building.
+
+4.16. Verification SHALL fail when an interception or injection lacks its own required metadata,
+an annotation uses compact formatting, dependency declarations conflict, a dependency provider is
+undeclared, or a generated dependency artifact differs from generator output.
+
+4.17. Dependency coverage SHALL be local and explicit: each injected field or method SHALL own the
+`@dependencies` annotation immediately associated with its declaration rather than inheriting a
+file-level target-class contract. Each provider declaration SHALL enumerate the external API, type,
+data, or integration surfaces consumed from that provider. Verification SHALL fail when an
+injection lacks local coverage or a provider's dependency surfaces are absent.
+
+4.18. Every positive or negative `ModuleExists` guard SHALL have an immediately adjacent docstring
+whose `@dependencies` metadata identifies the provider that owns the guarded module. No blank line
+SHALL separate an implementation docstring from its guard, REDscript annotation, field, method, or
+class declaration. Every implementation docstring SHALL be separated from preceding code by exactly
+one blank line. Verification SHALL reject missing guarded-module coverage, detached docstrings,
+malformed docstring openings, and missing or excessive separators before docstrings.
+
 ## Shared knowledge basis
 
 - `..\Knowledge\.kiro\steering\equipment-ex\photo-mode\ink-probe.md`

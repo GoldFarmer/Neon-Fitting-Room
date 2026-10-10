@@ -18,6 +18,7 @@ $required = @(
   'tools\templates\NfrBuildProfile.debug.reds',
   'tools\templates\NfrBuildProfile.release.reds',
   'tools\compile-redscript.ps1',
+  'tools\generate-dependencies.ps1',
   'docs\smoke-test.md',
   'release\manifest-template.json',
   'release\nexus-listing.bbcode',
@@ -35,6 +36,8 @@ $manifest = Get-NfrManifest
 if ($manifest.version -notmatch '^\d+\.\d+\.\d+$') {
   throw "Release manifest version must use semantic versioning."
 }
+
+& (Join-Path $root 'tools\generate-dependencies.ps1') -Check
 
 & (Join-Path $root 'tests\quality.ps1')
 Write-Host "Neon Fitting Room structural verification passed."

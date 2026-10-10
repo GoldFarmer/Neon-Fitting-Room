@@ -1,19 +1,77 @@
 module NeonFittingRoom
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(PlayerPuppet)
 private let m_nfrPhotoModeConsumeNextCameraWheel: Bool;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrControlsInputGuardViewport: wref<inkWidget>;
 
+/**
+ * Stores NFR-owned state on the extended native class.
+  *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 @addField(gameuiPhotoModeMenuController)
 private let m_nfrControlsInputGuardRegistered: Bool;
 
 /** Prevents camera zoom when the matching wheel release occurred inside the controls viewport.
  * The release decision comes from the wheel event's own cursor coordinates and is consumed once.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param action Player input action. @param consumer Host input consumer.
  * @return Host result unless the guarded camera-wheel action is consumed.
  * @errors Missing or out-of-order wheel decisions delegate unchanged. */
@@ -32,6 +90,19 @@ protected cb func OnAction(action: ListenerAction, consumer: ListenerActionConsu
 }
 
 /** Resolves the active native controls viewport and installs the pre-release coordinate probe.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Missing or changed host ancestry leaves native input unchanged. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -40,6 +111,19 @@ public func EnsureNfrPhotoModeControlsInputGuard() -> Void {
 }
 
 /** Moves the coordinate guard to the scroll viewport containing the supplied page widget.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param start Widget inside the active controls list. @return None.
  * @errors Missing host ancestry leaves the current guard unchanged. */
 @if(ModuleExists("EquipmentEx"))
@@ -68,6 +152,19 @@ public func EnsureNfrPhotoModeControlsInputGuardFor(start: wref<inkWidget>) -> V
 }
 
 /** Classifies a wheel release using its own cursor position in the active viewport's local space.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param evt Global pre-release pointer event. @return False to preserve native propagation.
  * @errors Missing players, viewports, or measurable sizes safely delegate camera input. */
 @if(ModuleExists("EquipmentEx"))
@@ -121,6 +218,19 @@ protected cb func OnNfrPhotoModeControlsWheelRelease(evt: ref<inkPointerEvent>) 
 }
 
 /** Releases the global coordinate callback and active viewport reference.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @addMethod(gameuiPhotoModeMenuController)
@@ -135,6 +245,19 @@ private func ReleaseNfrPhotoModeControlsInputGuard() -> Void {
 }
 
 /** Installs the controls input guard after the Photo Mode page is shown.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param reversedUI Host orientation. @return Host result. @errors Missing controls retain native behavior. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)
@@ -145,6 +268,19 @@ protected cb func OnShow(reversedUI: Bool) -> Bool {
 }
 
 /** Removes coordinate callbacks and pending wheel decisions during controller teardown.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param None. @return None. @errors Partial initialization is safe. */
 @if(ModuleExists("EquipmentEx"))
 @wrapMethod(gameuiPhotoModeMenuController)

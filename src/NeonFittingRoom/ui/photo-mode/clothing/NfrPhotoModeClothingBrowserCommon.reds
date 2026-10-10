@@ -1,9 +1,26 @@
 module NeonFittingRoom
 
+/**
+ * Compiles this declaration only when its external provider is available.
+  *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 import EquipmentEx.{OutfitSystem}
 
-/** Owns one generated clothing-slot selector, its ordered item identities, and card presenter. */
+/**
+ * Owns one generated clothing-slot selector, its ordered item identities, and card presenter.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 public class NfrPhotoModeClothingSlotBrowser extends IScriptable {
   public let slotID: TweakDBID;
@@ -14,7 +31,15 @@ public class NfrPhotoModeClothingSlotBrowser extends IScriptable {
   public let control: ref<NfrPhotoModeOwnedExpandableControl>;
 }
 
-/** Describes the reusable presentation and eligibility policy for one clothing browser instance. */
+/**
+ * Describes the reusable presentation and eligibility policy for one clothing browser instance.
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ */
 @if(ModuleExists("EquipmentEx"))
 public class NfrPhotoModeClothingBrowserConfig extends IScriptable {
   public let controlPrefix: String;
@@ -67,6 +92,19 @@ public class NfrPhotoModeClothingBrowserConfig extends IScriptable {
 /** Builds the shared lazy slot-row representation used by V and NPC clothing adapters.
  * Target-specific code supplies eligibility and preview mutation behavior through its config and
  * callbacks; this function owns Wardrobe enumeration and identical row presentation.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param container Parent child-control panel. @param config Target-specific policy and callbacks.
  * @param referenceRow Native row geometry source. @param referenceDisclosure Disclosure geometry.
  * @return Generated nonempty eligible slot controls. @errors Missing services return an empty set. */
@@ -179,6 +217,19 @@ public func BuildNfrPhotoModeClothingSlotControls(
 }
 
 /** Validates the record-level contract required by Equipment-EX puppet preview operations.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param outfitSystem Active Equipment-EX authority. @param itemID Candidate Wardrobe identity.
  * @return True for a defined clothing record assigned to a supported outfit slot.
  * @errors Missing or stale records are rejected without attempting to load their visual resources. */

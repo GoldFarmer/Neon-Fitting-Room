@@ -1,6 +1,19 @@
 module NeonFittingRoom
 
 /** Builds labeled Photo Mode cards from either owned or native expandable-control models.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param control Mounted control. @param callbackOwner Card callback owner.
  * @param cardCallback Card activation callback. @return True when rebuilt.
  * @errors Missing model, browser, or host state returns false. */
@@ -85,6 +98,19 @@ public func RebuildNfrExpandableCardControl(
 }
 
 /** Creates one card and binds its array position to the supplied item model.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param control Owning expandable control. @param item Item to display.
  * @param callbackOwner Activation owner. @param cardCallback Activation callback.
  * @return Card root or null. @errors A failed compiled-template spawn returns null. */

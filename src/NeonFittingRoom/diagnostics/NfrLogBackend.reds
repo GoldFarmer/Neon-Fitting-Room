@@ -7,6 +7,7 @@ module NeonFittingRoom
  * native logging references, so release packages need no shared debug logging declarations.
  */
 public abstract class NfrLogBackend {
+
   /**
    * Ignores a Neon Fitting Room diagnostic in the release build.
    *

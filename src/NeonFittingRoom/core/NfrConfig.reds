@@ -5,6 +5,12 @@ module NeonFittingRoom
  *
  * Codeware owns this ScriptableService's lifecycle. The generated build profile supplies the
  * default before the service is registered or when no session override exists.
+ *
+ * @dependencies {
+ *   "id": "codeware",
+ *   "adopted": "1.20.3",
+ *   "min": "TBD"
+ * }
  */
 public class NfrConfig extends ScriptableService {
   private let npcClothingEnabledForSession: Bool;
@@ -61,6 +67,12 @@ public class NfrConfig extends ScriptableService {
    *
    * This public service seam is callable from the Cyber Engine Tweaks console. The value is not
    * persisted, so the experimental feature returns to its safe disabled default after restart.
+   *
+   * @dependencies {
+   *   "id": "cyberEngineTweaks",
+   *   "adopted": "1.37.1",
+   *   "min": "TBD"
+   * }
    *
    * @param enabled Whether experimental NPC Clothing is enabled for this game process.
    * @return The committed session value.

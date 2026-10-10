@@ -6,6 +6,7 @@ param(
 
 . (Join-Path $PSScriptRoot 'common.ps1')
 $root = Get-NfrProjectRoot
+& (Join-Path $PSScriptRoot 'generate-dependencies.ps1')
 $manifest = Get-NfrManifest
 $files = @(Get-NfrSourceFiles -BuildFlavor $BuildFlavor)
 $flavor = $BuildFlavor.ToLowerInvariant()

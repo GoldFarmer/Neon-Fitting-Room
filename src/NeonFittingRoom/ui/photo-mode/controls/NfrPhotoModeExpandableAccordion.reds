@@ -1,6 +1,19 @@
 module NeonFittingRoom
 
 /** Collapses expanded top-level card browsers other than the browser about to open.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param exceptID Control identity that remains eligible to expand. @return None.
  * @errors Missing or partially initialized presenters are skipped. */
 @if(ModuleExists("EquipmentEx"))
@@ -28,6 +41,19 @@ public func CollapseNfrTopLevelExpandablePeers(exceptID: CName) -> Void {
 }
 
 /** Collapses one native top-level peer unless it is the browser being opened.
+ *
+ * @dependencies {
+ *   "id": "cp2077",
+ *   "adopted": "2.31",
+ *   "min": "TBD"
+ * }
+ *
+ * @dependencies {
+ *   "id": "equipmentEx",
+ *   "adopted": "1.2.9",
+ *   "min": "TBD"
+ * }
+ *
  * @param adapter Native selector adapter. @param exceptID Eligible expanding identity.
  * @return None. @errors Missing adapters are ignored. */
 @if(ModuleExists("EquipmentEx"))

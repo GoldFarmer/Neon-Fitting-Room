@@ -11,6 +11,7 @@ param(
 . (Join-Path $PSScriptRoot 'common.ps1')
 Assert-NfrGameRoot -GameDir $GameDir
 $root = Get-NfrProjectRoot
+& (Join-Path $PSScriptRoot 'generate-dependencies.ps1')
 $files = @(Get-NfrSourceFiles -BuildFlavor $BuildFlavor)
 $destination = Join-Path $GameDir 'r6\scripts\NeonFittingRoom'
 $inkArchive = Join-Path $root 'build\ink\NeonFittingRoom.archive'

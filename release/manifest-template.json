@@ -4,12 +4,78 @@
   "game": "Cyberpunk 2077",
   "runtime": "REDscript + RED4ext",
   "dependencies": {
-    "red4ext": "required",
-    "redscript": "required",
-    "equipmentEx": "required",
-    "codeware": "required",
-    "modSettings": "optional",
-    "photoModeEx": "optional"
+    "redscript": {
+      "name": "redscript",
+      "requirement": "required",
+      "relationship": "direct",
+      "adoptedVersion": "0.5.31",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/1511"
+    },
+    "cp2077": {
+      "name": "Cyberpunk 2077",
+      "requirement": "required",
+      "relationship": "direct",
+      "adoptedVersion": "2.31",
+      "minimumVersion": "TBD",
+      "url": "https://www.cyberpunk.net/"
+    },
+    "codeware": {
+      "name": "Codeware",
+      "requirement": "required",
+      "relationship": "direct",
+      "adoptedVersion": "1.20.3",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/7780"
+    },
+    "cyberEngineTweaks": {
+      "name": "Cyber Engine Tweaks",
+      "requirement": "optional",
+      "relationship": "interop",
+      "adoptedVersion": "1.37.1",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/107"
+    },
+    "archiveXL": {
+      "name": "ArchiveXL",
+      "requirement": "required",
+      "relationship": "transitive",
+      "adoptedVersion": "1.26.1",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/4198"
+    },
+    "tweakXL": {
+      "name": "TweakXL",
+      "requirement": "required",
+      "relationship": "transitive",
+      "adoptedVersion": "1.11.3",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/4197"
+    },
+    "equipmentEx": {
+      "name": "Equipment-EX",
+      "requirement": "required",
+      "relationship": "direct",
+      "adoptedVersion": "1.2.9",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/6945"
+    },
+    "red4ext": {
+      "name": "RED4ext",
+      "requirement": "required",
+      "relationship": "transitive",
+      "adoptedVersion": "1.30.0",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/2380"
+    },
+    "modSettings": {
+      "name": "Mod Settings",
+      "requirement": "optional",
+      "relationship": "direct",
+      "adoptedVersion": "0.2.21",
+      "minimumVersion": "TBD",
+      "url": "https://www.nexusmods.com/cyberpunk2077/mods/4885"
+    }
   },
   "recommendedCompatible": [
     "https://www.nexusmods.com/cyberpunk2077/mods/31327",

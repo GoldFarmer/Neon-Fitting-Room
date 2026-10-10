@@ -593,3 +593,52 @@ Native NPC Appearance selection is a hard invalidation boundary: immediately bef
 selection to Photo Mode, NFR removes its preview items and releases this component browser plus all
 generated slot rows. The ordinary deferred native-option refresh then leaves them eligible for lazy
 reconstruction against the replacement appearance.
+
+## Dependency metadata generation
+
+REDscript implementation docstrings are the authoritative dependency metadata source. Every
+`@wrapMethod`, `@replaceMethod`, `@addMethod`, and `@addField` declaration has an immediately
+associated multiline `@dependencies` JSON object. Its `id`, `adopted`, and `min` fields identify the
+provider, the provider version inspected when NFR adopted the integration, and the earliest
+deterministically verified compatible version or the literal `TBD`. The target and integration kind
+are derived from the REDscript annotation and declaration rather than duplicated in metadata.
+A concrete `min` requires versioned introduction evidence for the consumed contract. Current
+requirements published by another mod, successful testing against one version, and the adoption
+baseline are not treated as introduction evidence; those cases remain `TBD`.
+
+`integration/NfrDependencies.reds` declares every provider exactly once with a multiline
+`@dependencyProvider` object. Centralizing provider identity keeps publication and relationship
+metadata discoverable without duplicating it across consuming implementations. Provider records contain a stable ID, display name,
+requirement, relationship, URL, module identities, role, and consumed API/type/data surfaces. They
+do not duplicate version fields. Every
+provider version is aggregated from the `adopted` and `min` fields of actual `@dependencies` usage
+annotations. The effective adoption baseline is the highest recorded adopted version. The effective
+minimum is the highest known required version, while any unresolved usage keeps the provider's
+minimum at `TBD`.
+
+`@addMethod` and `@addField` annotations extend provider-owned classes even though they do not
+intercept an existing provider method. Each injected member therefore owns the same local
+dependency contract as an intercepted method. This repetition is intentional: moving or deleting a
+member cannot silently leave its dependency coverage behind in a file-level declaration. Compact
+one-line objects and implementation-unit target lists are rejected so all usage annotations have
+the same fields, layout, and ownership rule.
+
+Positive and negative `ModuleExists` guards are dependency boundaries in their own right. The
+docstring touching each guard includes the guarded provider's local `@dependencies` object, in
+addition to any native-class dependency carried by an adjacent REDscript injection. The generator
+maps module names through the centralized provider declarations and rejects unannotated or
+mismatched guards. It also rejects physical blank lines between a docstring and the guard or
+declaration it documents. The source-quality check enforces the complementary boundary: exactly one
+blank line separates preceding code from each docstring, while malformed combined openings such as
+`/**  *` are rejected.
+
+`tools/generate-dependencies.ps1` parses these docstrings, validates every interception, injection,
+and dependency-surface contract, aggregates
+the provider/version evidence, and writes the generated dependency matrix plus marked sections in
+the README and Nexus listing and the manifest dependency object. `tools/verify.ps1` runs the
+generator in check mode so handwritten drift fails validation. Recommended compatible mods remain
+outside the generated dependency list because NFR neither loads nor calls them.
+
+Development installation and release packaging run the generator before resolving source files or
+release metadata. A normal build therefore refreshes every generated dependency artifact from the
+authoritative implementation docstrings; verification remains a non-mutating drift check.

@@ -24,11 +24,34 @@ foreach ($file in $sourceFiles) {
   }
 
   for ($index = 0; $index -lt $lines.Count; $index++) {
+    if (
+      $index -gt 0 -and
+      $lines[$index] -match '^\s*/\*\*' -and
+      $lines[$index - 1] -notmatch '^\s*$'
+    ) {
+      throw "$($file.FullName):$($index + 1) docstring must have one blank line before it."
+    }
+
+    if (
+      $index -gt 1 -and
+      $lines[$index] -match '^\s*/\*\*' -and
+      $lines[$index - 1] -match '^\s*$' -and
+      $lines[$index - 2] -match '^\s*$'
+    ) {
+      throw "$($file.FullName):$($index + 1) docstring has more than one blank line before it."
+    }
+
+    if ($lines[$index] -match '^\s*/\*\*\s+\*') {
+      throw "$($file.FullName):$($index + 1) has a malformed docstring opening."
+    }
+
     if ($lines[$index] -notmatch '^\s*(public|private|protected)\s+.*\b(class|func)\b') {
       continue
     }
 
-    $docStart = [Math]::Max(0, $index - 16)
+    # The centralized provider catalog is intentionally longer than ordinary declaration docs.
+    # Keep the bound finite while allowing its complete structured metadata block.
+    $docStart = [Math]::Max(0, $index - 192)
     $docBlock = $lines[$docStart..($index - 1)] -join "`n"
     if ($docBlock -notmatch '/\*\*') {
       throw "$($file.FullName):$($index + 1) is missing an immediate declaration docstring."
