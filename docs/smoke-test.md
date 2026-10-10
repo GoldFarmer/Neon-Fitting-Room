@@ -9,7 +9,8 @@ Record the game and dependency versions before testing. The validated baseline i
 2. Expand Outfit; verify cards, search, tooltips, optional icon collages, selection, native-arrow
    synchronization, and outer scrolling.
 3. Expand Clothing; verify alphabetical icon cards, parent search, slot-arrow cycling, `NONE`,
-   selected-card toggling, replacement, and synchronized slot summaries.
+   selected-card toggling, replacement, and synchronized slot summaries. Rapidly replace several
+   items in one slot and verify the latest selection wins without leaving the slot unresponsive.
 4. Select another outfit before and after Clothing is materialized; verify its slot state is current.
 5. Use **Clear** and **Reset** from Current Equipped, No Outfit, and a saved outfit.
 6. Expand Category, Pose, and Facial Expression; verify search, native synchronization, dependent

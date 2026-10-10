@@ -31,6 +31,14 @@ decisions, not as actionable backlog items.
   outside the controls viewport.
 - [x] Consolidate V clothing card and arrow mutations into one authoritative tracked-`ItemID`
   clear/toggle/replace transition without changing Equipment-EX's native Outfit authority.
+- [x] Reject clothing entries without a valid clothing record, appearance identity,
+  Equipment-EX eligibility, or supported slot at catalog and activation boundaries.
+- [x] Serialize V slot replacement through the attachment-slot unequip-completion callback and
+  cancel timed-out removals instead of forcing a potentially overlapping equip.
+- [x] Coalesce rapid same-slot input and recover missing removal callbacks by inspecting the actual
+  puppet attachment before committing, resynchronizing, or safely cancelling.
+- [ ] Runtime-validate serialized V replacement, timeout-safe cancellation, and malformed-record
+  omission against the supported dependency baseline.
 - [x] Runtime-validate the consolidated V slot transition for arrow selection, card selection,
   selected-card toggle, `NONE`, item replacement, and outfit resynchronization.
 - [x] Validate repeated Photo Mode entry, exit, page reconstruction, and clean teardown without
@@ -56,6 +64,8 @@ decisions, not as actionable backlog items.
   appearance-component cards, with no redundant inner NPC search field and with
   debounced label matching, utility-card hiding, focus release, collapse reset, selector-aligned
   placement, and predictive scroll preservation.
+- [x] Normalize every search binding to one 450-millisecond debounce and match unopened Clothing
+  slots from retained identities without eagerly materializing their card models.
 - [x] Runtime-validate search filtering, empty results, collapse reset, focus release, and anchored
   scrolling across Outfit, V/NPC native options, NPC Appearance, and parent-level V/NPC Clothing.
 - [x] Add game-styled item tooltips with full item names and available details to icon-only clothing

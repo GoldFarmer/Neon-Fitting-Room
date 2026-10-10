@@ -16,6 +16,6 @@ public abstract class NfrBuildMarker {
    * @errors None.
    */
   public static func GetVersion() -> String {
-    return "0.1.1";
+    return "0.1.2";
   }
 }

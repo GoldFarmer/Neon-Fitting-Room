@@ -104,13 +104,20 @@ public func BuildNfrPhotoModeClothingSlotControls(
     ArrayPush(candidates, slotBrowser);
   }
   for itemID in wardrobeItemIDs {
-    slotBrowser = slotMap.Get(TDBID.ToNumber(outfitSystem.GetItemSlot(itemID)))
-      as NfrPhotoModeClothingSlotBrowser;
-    if IsDefined(slotBrowser) {
-      ArrayPush(slotBrowser.itemIDs, itemID);
-      if config.readPlayerEquippedState && outfitSystem.IsEquipped(itemID) {
-        slotBrowser.activeItemID = itemID;
+    if this.IsNfrClothingCatalogItemEligible(outfitSystem, itemID) {
+      slotBrowser = slotMap.Get(TDBID.ToNumber(outfitSystem.GetItemSlot(itemID)))
+        as NfrPhotoModeClothingSlotBrowser;
+      if IsDefined(slotBrowser) {
+        ArrayPush(slotBrowser.itemIDs, itemID);
+        if config.readPlayerEquippedState && outfitSystem.IsEquipped(itemID) {
+          slotBrowser.activeItemID = itemID;
+        }
       }
+    } else {
+      NfrLog.Warn(
+        s"Skipped invalid Wardrobe clothing record="
+        + s"\(TDBID.ToStringDEBUG(ItemID.GetTDBID(itemID)))."
+      );
     }
   }
   if config.discoverTargetSlotItems && IsDefined(config.target) && IsDefined(transactionSystem) {
@@ -121,10 +128,12 @@ public func BuildNfrPhotoModeClothingSlotControls(
         // Puppet slots contain preview identities. Normalize to record identity so the shared
         // Equipment-EX equip/unequip route can deterministically recreate the preview ID.
         attachedItem = ItemID.FromTDBID(ItemID.GetTDBID(attachedItem));
-        slotBrowser.startingItemID = attachedItem;
-        slotBrowser.activeItemID = attachedItem;
-        if !ArrayContains(slotBrowser.itemIDs, attachedItem) {
-          ArrayPush(slotBrowser.itemIDs, attachedItem);
+        if this.IsNfrClothingCatalogItemEligible(outfitSystem, attachedItem) {
+          slotBrowser.startingItemID = attachedItem;
+          slotBrowser.activeItemID = attachedItem;
+          if !ArrayContains(slotBrowser.itemIDs, attachedItem) {
+            ArrayPush(slotBrowser.itemIDs, attachedItem);
+          }
         }
       }
     }
@@ -167,4 +176,25 @@ public func BuildNfrPhotoModeClothingSlotControls(
     + s"wardrobeItems=\(ArraySize(wardrobeItemIDs)) eligible=\(ArraySize(config.eligibleSlots))."
   );
   return result;
+}
+
+/** Validates the record-level contract required by Equipment-EX puppet preview operations.
+ * @param outfitSystem Active Equipment-EX authority. @param itemID Candidate Wardrobe identity.
+ * @return True for a defined clothing record assigned to a supported outfit slot.
+ * @errors Missing or stale records are rejected without attempting to load their visual resources. */
+@if(ModuleExists("EquipmentEx"))
+@addMethod(gameuiPhotoModeMenuController)
+private func IsNfrClothingCatalogItemEligible(
+  outfitSystem: wref<OutfitSystem>, itemID: ItemID
+) -> Bool {
+  let clothingRecord: wref<Clothing_Record>;
+  if !IsDefined(outfitSystem) || !ItemID.IsValid(itemID) { return false; }
+  clothingRecord = TweakDBInterface.GetClothingRecord(ItemID.GetTDBID(itemID));
+  if !IsDefined(clothingRecord) || !IsDefined(clothingRecord.ItemCategory())
+    || NotEquals(clothingRecord.ItemCategory().Type(), gamedataItemCategory.Clothing)
+    || !IsNameValid(clothingRecord.AppearanceName()) {
+    return false;
+  }
+  return outfitSystem.IsEquippable(itemID)
+    && TDBID.IsValid(outfitSystem.GetItemSlot(itemID));
 }

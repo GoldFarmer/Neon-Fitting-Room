@@ -22,10 +22,24 @@ NPC garment refitting are deferred.
 ## State model
 
 The live state model retains Equipment-EX's native Outfit selection authority. V clothing card and
-slot-arrow input converge on
-`ApplyNfrClothingSlotSelection`, which uses the slot browser's active `ItemID` to perform one
-clear/toggle/replace transition through `UnequipPuppetItem` and `EquipPuppetItem`, then synchronizes
-the slot label, selected card, parent count, and custom-preview state.
+slot-arrow input converge on `ApplyNfrClothingSlotSelection`, which passes the requested transition
+to `RequestNfrClothingSwap`. A replacement first calls `UnequipPuppetItem`, waits for the matching
+`AttachmentSlotsScriptCallback.OnItemUnequippedComplete`, and queues `EquipPuppetItem` on the next
+transaction tick. A one-second timeout cancels a request whose removal completion never arrives;
+before cancellation it queries the actual puppet slot. An empty slot safely commits the latest
+request, a different attachment resynchronizes presentation, and the prior attachment still being
+present cancels without equipping. Repeated input for the pending slot coalesces into that request,
+so the latest card selection wins without initiating another removal. Controller teardown
+unregisters the listener and invalidates pending callbacks. Clear and empty-slot selections do not
+require an attachment replacement.
+
+The shared clothing catalog admits only valid `ItemID` values backed by a defined
+`Clothing_Record`, a valid `AppearanceName`, Equipment-EX `IsEquippable` approval, and a valid
+Equipment-EX outfit slot. The same predicate is checked when selection begins and immediately before
+attachment, preventing stale records from bypassing catalog filtering. These checks reject
+deterministically malformed record metadata; they do not claim to discover missing archive files,
+transitive mod dependencies, mesh defects, or garment/body incompatibility because the runtime item
+record does not expose an authoritative resource dependency graph.
 
 Clear is an owned text action in the Clothing header's unused space. It preserves the active
 Equipment-EX preview-outfit selection while directly clearing its public `GetOutfitSlots()` set and
@@ -374,12 +388,15 @@ as icon-only cells without names beneath their icons. Hovering a cell resolves s
 Equipment-EX item label in the shared game-styled tooltip. Categories with no available Wardrobe
 items are omitted.
 The top-level Clothing browser on both V and NPC pages owns one shared search field immediately below
-its header. It lazily resolves every represented slot catalog, hides child rows without a match, and
-applies the current display-name query whenever a matching child is expanded. On the NPC page the same
+its header. While a slot remains lazy, search matches directly against its retained item identities
+and Equipment-EX display names instead of materializing its item models or card surface. It hides
+child rows without a match and applies the current display-name query whenever a matching child is
+expanded. On the NPC page the same
 binding also filters the NPC appearance-component card collection, whose browser suppresses its own
 otherwise-standard card search. Search hides `NONE` utility cards in rendered results, preserves every
 slot header's active-item summary, and does not automatically expand sibling controls. Clearing or
 collapsing Clothing restores every child row and card.
+Every NFR search binding waits for the same 450-millisecond idle interval after the latest input.
 Query changes use the same predictive scroll transaction
 as expansion so the outer Photo Mode viewport remains anchored.
 

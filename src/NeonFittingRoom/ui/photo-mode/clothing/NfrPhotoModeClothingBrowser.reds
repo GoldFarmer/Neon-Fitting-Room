@@ -890,28 +890,13 @@ private func ApplyNfrClothingSlotSelection(
   if shouldClear && !ItemID.IsValid(activeItemID) { return false; }
   if !shouldClear && Equals(selectedItemID, activeItemID) { return false; }
 
-  this.m_nfrClothingSyncRevision += 1;
-  if ItemID.IsValid(activeItemID) {
-    outfitSystem.UnequipPuppetItem(puppet, activeItemID);
-  }
-  if shouldClear {
-    selectedItemID = ItemID.None();
-    index = 0;
-  } else {
-    outfitSystem.EquipPuppetItem(puppet, selectedItemID);
-  }
-
-  slotBrowser.activeItemID = selectedItemID;
-  slotBrowser.control.presenter.SetActiveIdentity(index);
-  slotBrowser.control.SyncOwnedValueLabel();
-  if index == 0 { slotBrowser.control.optionLabel.SetText(""); }
-  this.m_nfrClothingCustomPreview = true;
-  this.UpdateNfrClothingStatus(this.CountNfrActiveClothingSlots());
-  this.UpdateNfrClothingSlotCardVisuals(slotBrowser);
-  NfrLog.Info(s"Updated Photo Mode clothing slot=\(TDBID.ToStringDEBUG(slotBrowser.slotID)) "
-    + s"itemIndex=\(index) cleared=\(shouldClear)."
+  return this.RequestNfrClothingSwap(
+    puppet,
+    slotBrowser,
+    index,
+    selectedItemID,
+    shouldClear
   );
-  return true;
 }
 
 /** Applies the standard red/blue card treatment for one clothing slot's active identity.
@@ -959,6 +944,7 @@ private func UpdateNfrClothingSlotCardVisuals(
 protected cb func OnUninitialize() -> Void {
   let parent: wref<inkCompoundWidget>;
   let cardIndex: Int32;
+  this.ReleaseNfrClothingAttachmentListener();
   for slotBrowser in this.m_nfrClothingSlots {
     this.ReleaseNfrCardSearch(slotBrowser.control.presenter.browser);
     slotBrowser.control.ReleaseOwnedHooks(

@@ -2,6 +2,9 @@ module NeonFittingRoom
 
 import Codeware.UI.*
 
+@if(ModuleExists("EquipmentEx"))
+import EquipmentEx.OutfitSystem
+
 /** Owns one parent-level Clothing query across its generated slot controls. */
 @if(ModuleExists("EquipmentEx"))
 public class NfrPhotoModeClothingSearchBinding extends IScriptable {
@@ -144,7 +147,7 @@ protected cb func OnNfrClothingSearchInput(widget: wref<inkWidget>) -> Bool {
           binding.controlID,
           binding.generation
         ),
-        0.20,
+        NfrPhotoModeSearchPolicy.DebounceSeconds(),
         false
       );
       return true;
@@ -175,6 +178,7 @@ public func ApplyNfrClothingSearchGeneration(controlID: CName, generation: Int32
 private func ApplyNfrClothingGroupSearch(
   binding: ref<NfrPhotoModeClothingSearchBinding>, query: String
 ) -> Void {
+  let outfitSystem = OutfitSystem.GetInstance(this.GetPlayerControlledObject().GetGame());
   let active = NotEquals(StrLower(query), "");
   let normalized = StrLower(query);
   let labels: array<String>;
@@ -213,17 +217,24 @@ private func ApplyNfrClothingGroupSearch(
     matchCount = 0;
     index = 0;
     if IsDefined(slotBrowser) && IsDefined(slotBrowser.control)
-      && IsDefined(slotBrowser.control.presenter)
-      && (!active || this.EnsureNfrClothingSlotItemsLoaded(slotBrowser)) {
-      for item in slotBrowser.control.presenter.model.items {
-        ArrayPush(labels, item.label);
-        if index > 0 && StrContains(StrLower(item.label), normalized) {
-          matchCount += 1;
+      && IsDefined(slotBrowser.control.presenter) {
+      if slotBrowser.itemsLoaded {
+        for item in slotBrowser.control.presenter.model.items {
+          ArrayPush(labels, item.label);
+          if index > 0 && StrContains(StrLower(item.label), normalized) {
+            matchCount += 1;
+          }
+          index += 1;
         }
-        index += 1;
+      } else if IsDefined(outfitSystem) {
+        for itemID in slotBrowser.itemIDs {
+          if StrContains(StrLower(outfitSystem.GetItemName(itemID)), normalized) {
+            matchCount += 1;
+          }
+        }
       }
       slotBrowser.control.presenter.browser.host.SetVisible(!active || matchCount > 0);
-      if IsDefined(slotBrowser.control.presenter.content) {
+      if slotBrowser.itemsLoaded && IsDefined(slotBrowser.control.presenter.content) {
         this.ApplyNfrCardCollectionFilter(
           slotBrowser.control.presenter.browser,
           slotBrowser.control.presenter.content,

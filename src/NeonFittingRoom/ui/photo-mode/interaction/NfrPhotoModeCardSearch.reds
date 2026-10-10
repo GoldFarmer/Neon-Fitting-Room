@@ -2,6 +2,13 @@ module NeonFittingRoom
 
 import Codeware.UI.*
 
+/** Defines shared timing for every NFR search field. */
+public abstract class NfrPhotoModeSearchPolicy {
+  /** Returns the idle interval required before filtering. @param None.
+   * @return Seconds after the latest input. @errors None. */
+  public static func DebounceSeconds() -> Float = 0.45;
+}
+
 /** Binds one reusable text input to one expandable card collection. */
 public class NfrPhotoModeCardSearchBinding extends IScriptable {
   public let input: ref<HubTextInput>;
@@ -149,7 +156,7 @@ protected cb func OnNfrCardSearchInput(widget: wref<inkWidget>) -> Bool {
         binding.generation += 1;
         GameInstance.GetDelaySystem(this.GetPlayerControlledObject().GetGame()).DelayCallback(
           NfrCardSearchDebounceCallback.Create(this, binding, binding.generation),
-          0.20,
+          NfrPhotoModeSearchPolicy.DebounceSeconds(),
           false
         );
         return true;

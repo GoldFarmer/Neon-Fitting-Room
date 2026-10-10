@@ -192,8 +192,9 @@ Equipment-EX Wardrobe item browser.
 
 2.1a. Activating a category header SHALL toggle that category's expanded state.
 
-2.2. The item browser SHALL include every clothing item available in the player's Equipment-EX
-Wardrobe.
+2.2. The item browser SHALL include every Equipment-EX Wardrobe item that resolves to a valid
+`Clothing_Record`, has a valid appearance name, and maps to a supported Equipment-EX outfit slot.
+Malformed or stale entries that fail those deterministic checks SHALL be omitted.
 
 2.3. When one or more items in a category are part of the selected outfit or active preview state,
 the category header SHALL display the relevant equipped item name using an equipped-state color.
@@ -208,7 +209,12 @@ the Photo Mode fake puppet without requiring an Apply button.
 preview override.
 
 2.7. When the user selects another item for the same equipment slot, Neon Fitting Room SHALL
-replace the prior override for that slot.
+request removal of the prior override, wait for the matching attachment-slot completion callback,
+and attach the replacement on the following transaction tick. If completion is not reported within
+the bounded timeout, NFR SHALL inspect the actual puppet slot: an empty slot SHALL complete the
+latest request, a changed attachment SHALL resynchronize the slot UI, and a still-present prior
+attachment SHALL cancel the replacement rather than force an overlapping attachment. Additional
+input for the same pending slot SHALL replace the pending target so the latest selection wins.
 
 2.8. Selected item cards SHALL use the Wardrobe blue-accent selection treatment.
 
@@ -284,7 +290,8 @@ localized search field immediately below its parent control row.
 
 2.27a. The Clothing search field SHALL appear only while the top-level Clothing browser is expanded.
 
-2.28. The item search SHALL filter matching items live after a brief input debounce.
+2.28. Every item search SHALL use the same 450-millisecond idle debounce before filtering so input
+remains responsive and no search path begins work earlier than another.
 
 2.29. Item search SHALL match item display names only.
 
